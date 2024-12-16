@@ -1,6 +1,6 @@
 <template>
     <div>
-      <Navbar />
+      <MyNavbar />
       <h1>자산 관리 대시보드</h1>
       <div>
         <AssetChart />
@@ -10,13 +10,14 @@
   </template>
   
   <script>
-  import Navbar from '@/components/Navbar.vue'
+  import MyNavbar from '@/components/Navbar.vue'
   import AssetChart from '@/components/AssetChart.vue'
   import StockInfo from '@/components/StockInfo.vue'
   
   export default {
+    name : 'DashboardPage',
     components: {
-      Navbar,
+      MyNavbar,
       AssetChart,
       StockInfo
     }

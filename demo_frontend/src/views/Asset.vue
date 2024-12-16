@@ -20,6 +20,7 @@
   import axios from 'axios';
   
   export default {
+    name : 'AssetPage',
     data() {
       return {
         newAsset: {

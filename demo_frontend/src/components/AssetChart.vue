@@ -7,9 +7,10 @@
   
   <script>
   import { Bar } from 'vue-chartjs'
-  import { Chart as ChartJS } from 'chart.js/auto'
+  // import { Chart as ChartJS } from 'chart.js/auto'
   
   export default {
+    name : 'AssetChart',
     components: {
       BarChart: Bar
     },
