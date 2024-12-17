@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.domain.demo_backend.mapper.DiaryMapper">
+    <!--단일 일기장 작성하기 -->
+    <insert id="insertDiary">
+        INSERT INTO diary(user_sqno, title, content, tag1, tag2,tag3, frst_reg_ip, frst_rgst_usps_sqno)
+        VALUES (#{userSqno}, #{title}, #{content},#{tag1}, #{tag2}, #{tag3}, #{diaryStatus}
+               ,#{frstRegIp}, #{frstRgstUspsSqno})
+    </insert>
+
+    <!-- updateDiaryDel 일기 삭제 -->
+    <update id="updateDiaryDel">
+        UPDATE diary
+        SET del_yn = 'Y',
+            del_dt = NOW(),
+            last_updt_ip = #{lastUpdtIp},
+            last_updt_usps_sqno = #{lastUpdtUspsSqno}
+        WHERE diary_id IN
+        <foreach collection="diaryRemoveList" item="diary" open="(" separator="," close=")">
+            #{diaryId}
+        </foreach>
+        <if test="userSqno != null">
+            AND user_sqno = #{userSqno}
+        </if>
+    </update>
+
+<!-- 자신이 쓴 일기 목록만 조회 가능 -->
+<select id="selectDiaryList" resultType="com.domain.demo_backend.diary.dto.DiaryResponse">
+SELECT
+    diary_id AS diaryID,
+    user_sqno AS userSqno,
+    title,
+    content,
+    diary_status AS diaryStatus,
+    diary_type AS diaryType,
+    del_yn AS delYn,
+    reg_dt AS regDt,
+    updt_dt AS updtDt
+FROM diary
+where del_yn = 'N'
+<if test="userSqno != null">
+    AND user_sqno = #{userSqno}
+</if>
+    ORDER BY reg_dt DESC
+</select>
+
+<!-- findDiarySearchList : 일기 상세 보기-->
+    <select id="findDiaryList" parameterType="string" resultType="com.domain.demo_backend.diary.dto.DiaryResponse">
+        SELECT
+            diary_id AS diaryID,
+            user_sqno AS userSqno,
+            title,
+            content,
+            diary_status AS diaryStatus,
+            diary_type AS diaryType,
+            reg_dt AS regDt,
+            updt_dt AS updtDt
+        FROM diary
+        WHERE del_yn = 'N'
+        <if test="title != null and title != ''">
+            AND title LIKE CONCAT('%', #{title}, '%')
+        </if>
+        ORDER BY reg_dt DESC
+    </select>
+
+</mapper>
