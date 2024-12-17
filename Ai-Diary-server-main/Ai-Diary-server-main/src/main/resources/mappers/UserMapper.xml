@@ -10,11 +10,17 @@
         VALUES (#{userId}, #{password}, #{hashedPassword}, #{email}, #{phoneNumber},
                 IFNULL(#{nickname}, #{userId}), #{socialLoginId}, #{isSocialLogin}, #{aud}, #{sub}, #{authTime}, #{iss}, #{exp}, #{iat}, #{picture});
     </insert>
+-->
 
-
-    <select id="findByUsername" parameterType="string" resultType="com.example.demo.model.User">
-        SELECT * FROM USR_USPS WHERE username = #{username}
+    <select id="findByUserId"  resultType="com.domain.demo_backend.user.domain.User">
+        SELECT * FROM users WHERE user_id = #{userId}
     </select>
 
--->
+    <select id="findByUserPhone"  resultType="com.domain.demo_backend.user.domain.User">
+        SELECT * FROM users WHERE password = #{password}
+    </select>
+
+    <select id="findByUserEmail"  resultType="com.domain.demo_backend.user.domain.User">
+        SELECT * FROM users WHERE email = #{email}
+    </select>
 </mapper>

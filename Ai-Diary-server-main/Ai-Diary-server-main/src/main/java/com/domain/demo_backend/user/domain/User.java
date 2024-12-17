@@ -1,8 +1,11 @@
 package com.domain.demo_backend.user.domain;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.boot.autoconfigure.elasticsearch.ElasticsearchConnectionDetails;
 import org.springframework.data.annotation.Id;
 
 import java.math.BigInteger;
@@ -11,45 +14,33 @@ import java.math.BigInteger;
 
 @Setter
 @Getter
+@NoArgsConstructor
 public class User {
-    private String userId;
     private BigInteger userSqno;
+    private String userId;
     private String password;
+    private String repassword;
     private String role;
     private String username;
     private String phone;
     private String email;
     private String Hashedpassword;
 
-    private User(Builder builder){
-        this.userId = builder.userId;
-        this.password = builder.password;
-        this.role = builder.role;
-    }
-    public static class Builder{
-        private String userId;
-        private String password;
-        private String role;
-        private String username;
-        public Builder username(String username) {
-            this.username = username;
-            return this;
-        }
-        public Builder password(String password) {
-            this.password = password;
-            return this;
-        }
-        public Builder role(String role) {
-            this.role = role;
-            return this;
-        }
-        public User build(){
-            return new User(this);
-        }
-    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
+    @Builder
+    public User(String userId, String password, String repassword, String role, String username, String phone, String email) {
+        this.userId = userId;
+        this.password = password;
+        this.repassword = repassword;
+        this.role = role;
+        this.username = username;
+        this.phone = phone;
+        this.email = email;
+    }
 
 }
