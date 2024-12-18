@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <!-- Axios 라이브러리 추가 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<h2>Welcome to Home Page</h2>
+
+<!-- 로그아웃 링크 -->
+<a href="/logout">Logout</a>
+
+<!-- 버튼: addDiaryList 실행 -->
+<button id="addDiaryButton">Add Diary List</button>
+
+<script>
+    // 버튼 클릭 이벤트 핸들러
+    document.getElementById("addDiaryButton").addEventListener("click", function() {
+        axios.post("http://localhost:8080/api/diary/addDiaryList", {
+            userSqno: "12345",
+            content: "Test Content",
+            title: "Test Title",
+            userSqnoList: [12345]
+        }, {
+            headers: {
+                "X-Forwarded-For": "127.0.0.1"
+            }
+        })
+            .then(response => {
+                alert("Response: " + response.data); // 성공 메시지 알림
+                console.log("Response:", response.data);
+            })
+            .catch(error => {
+                alert("Error occurred. Check the console for details."); // 오류 알림
+                console.error("Error:", error);
+            });
+    });
+</script>
+</body>
+</html>
