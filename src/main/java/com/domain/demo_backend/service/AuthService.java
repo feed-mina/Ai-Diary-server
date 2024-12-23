@@ -31,13 +31,17 @@ public class AuthService {
         System.out.println("입력된 해시값: " + PasswordUtil.sha256(loginRequest.getPassword()));
 
         if (user == null) {
+            System.out.println("아이디 성공");
             throw new RuntimeException("존재하지 않는 아이디입니다.");
         }
         if (!user.getHashedPassword().equals(PasswordUtil.sha256(loginRequest.getPassword()))) {
+
+            System.out.println("비밀번호 성공");
             throw new RuntimeException("비밀번호가 일치하지 않습니다.");
         }
+        System.out.println("JWT 성공");
         // 비밀번호를 포함하지 않은 사용자 정보를 JWT에 포함
-        return jwtProvider.createToken(user.getUserId(), user.getRole());
+        return jwtProvider.createToken(user.getUserId(), user.getUsername());
     }
 
 
@@ -60,7 +64,7 @@ public class AuthService {
                 .userId(registerRequest.getUserId())
                 .username(registerRequest.getUsername())
                 .password(registerRequest.getPassword())
-                .hashedPassword(PasswordUtil.sha256(registerRequest.getPassword()))
+                // .hashedPassword(PasswordUtil.sha256(registerRequest.getPassword()))
                 .phone(registerRequest.getPhone())
                 .email(registerRequest.getEmail())
                 .role("USER")

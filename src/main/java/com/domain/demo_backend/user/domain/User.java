@@ -25,6 +25,7 @@ public class User {
     private String repassword;          // repassword
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+    private String nickname;
 
 
     @Builder

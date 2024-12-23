@@ -41,10 +41,14 @@ public class AuthController {
     public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
         try{
             String jwt = authService.login(loginRequest);
+
+            System.out.println("로그인 성공");
             return ResponseEntity.ok(new LoginResponse(jwt));
          }catch (RuntimeException e){
             // 명확한 에러 메시지 반환
             Map<String, String> errorResponse = new HashMap<>();
+
+            System.out.println("로그인 실패");
             errorResponse.put("error", "로그인 실패");
             errorResponse.put("message", e.getMessage());
             return ResponseEntity.badRequest().body(errorResponse);

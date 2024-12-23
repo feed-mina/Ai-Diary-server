@@ -1,14 +1,11 @@
- @PostMapping은 오직 POST 요청만 처리하다.
 
-그러나 브라우저에서 URL에 직접 접근하거나 링크 클릭시 기본적으로 GET요청이 전송된다. 즉, URL을 브라우저 주소창에 입력하거나 링크클릭하면 GET요청이 되어 405 Method Not Allowd 오류가 발생한다.
-
-@PostMapping 메서드는 데이터를 서버로 전송하는 용도이다.
-
-
-==========================
-http://localhost:8080/api/diary/viewDiaryList 는 500 애러가 발생한다.
-2024-12-17T19:49:14.113+09:00  WARN 2580 --- [demo_backend] [nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `com.domain.demo_backend.diary.domain.Diary` (although at least one Creator exists): no int/Int-argument constructor/factory method to deserialize from Number value (12345)]
 USE ai_diary_db;
+
+SELECT * FROM users;
+SELECT * FROM diary;
+SELECT * FROM diary_views;
+SELECT * FROM chats;
+SELECT * FROM webrtc_connections;
 
 
 CREATE TABLE users (
@@ -107,13 +104,4 @@ INSERT INTO webrtc_connections (caller_sqno, receiver_sqno, status) VALUES
 (4, 5, 'ended'),
 (5, 1, 'active');
 
-
-SELECT * FROM users;
-SELECT * FROM diaries;
-SELECT * FROM diary_views;
-SELECT * FROM chats;
-SELECT * FROM webrtc_connections;
-
-
-ai_diary_db
 
