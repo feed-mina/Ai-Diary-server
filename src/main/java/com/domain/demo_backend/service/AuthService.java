@@ -59,6 +59,7 @@ public class AuthService {
             throw new IllegalArgumentException("이미 존재하는 핸드폰 번호입니다.");
         }
 
+        System.out.println("유효성 통과");
         User user = User.builder()
                 .userId(registerRequest.getUserId())
                 .username(registerRequest.getUsername())
@@ -69,6 +70,8 @@ public class AuthService {
                 .role("USER")
                 .createdAt(LocalDateTime.now())
                 .build();
+
+        System.out.println("user Mapper insertUser 시작");
         userMapper.insertUser(user);
     }
 }
