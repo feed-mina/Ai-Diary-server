@@ -49,13 +49,19 @@ public class AuthService {
     @Transactional
     public void register(RegisterRequest registerRequest) {
         if (userMapper.findByUserId(registerRequest.getUserId()) != null) {
+            System.out.println("회원 가입 아이디 실패");
+
             throw new IllegalArgumentException("이미 존재하는 아이디입니다.");
         }
         if(userMapper.findByUserEmail(registerRequest.getEmail()) != null){
+            System.out.println("회원가입 이메일 실패");
+
             throw new IllegalArgumentException("이미 존재하는 이메일입니다.");
         }
 
         if(userMapper.findByUserPhone(registerRequest.getPhone()) != null){
+            System.out.println("회원가입 핸드폰 실패");
+
             throw new IllegalArgumentException("이미 존재하는 핸드폰 번호입니다.");
         }
 
@@ -71,6 +77,7 @@ public class AuthService {
                 .createdAt(LocalDateTime.now())
                 .build();
 
+        System.out.println(user);
         System.out.println("user Mapper insertUser 시작");
         userMapper.insertUser(user);
     }

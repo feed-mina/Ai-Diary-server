@@ -15,13 +15,13 @@ public class RegisterRequest {
     private String username;
     @NotBlank(message = "비밀번호는 필수입니다.")
     private String password;
-    private String hashedPassword;
+    // private String hashedPassword;
     private String role;
     private String phone;
 
     @Email(message = "유효한 이메일을 입력하세요.")
     private String email;
-    private String nickname;
+    // private String nickname;
     private LocalDate createdAt;
     private String updatedAt;
 }

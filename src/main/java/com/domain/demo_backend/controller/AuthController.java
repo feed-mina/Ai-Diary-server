@@ -64,12 +64,15 @@ public class AuthController {
     })
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody RegisterRequest registerRequest) {
+        System.out.println("회원가입 진입");
+        System.out.println(registerRequest);
         authService.register(registerRequest);
         System.out.println("register service logic OK");
         return ResponseEntity.ok("User registred successfully!");
     }
 
-
+/*
+*
     @Operation(summary = "로그아웃" , description = "사용자가 로그아웃을 한다. 로그아웃을 하면 localStorage나 cookie로 저장한 유저 정보를 지우고 로그인페이지로 이동한다")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "로그아웃 성공"),
@@ -81,7 +84,7 @@ public class AuthController {
         // 로그아웃 로직
         return ResponseEntity.ok("로그인 성공");
     }
-
+*/
     @Operation(summary = "회원 탈퇴" , description = "사용자 계정의 del_yn flag를 'Y' -> 'N'로 표시한다.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "회원탈퇴 성공"),
