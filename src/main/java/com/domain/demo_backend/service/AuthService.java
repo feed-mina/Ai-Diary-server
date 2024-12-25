@@ -70,7 +70,7 @@ public class AuthService {
                 .userId(registerRequest.getUserId())
                 .username(registerRequest.getUsername())
                 .password(registerRequest.getPassword())
-                // .hashedPassword(PasswordUtil.sha256(registerRequest.getPassword()))
+                .hashedPassword(PasswordUtil.sha256(registerRequest.getPassword()))
                 .phone(registerRequest.getPhone())
                 .email(registerRequest.getEmail())
                 .role("USER")
