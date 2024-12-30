@@ -4,6 +4,7 @@ package com.domain.demo_backend.diary.dto;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
+import java.math.BigInteger;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -14,7 +15,7 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode
 public  class DiaryResponse {
 
-    private String userSqno;
+    private BigInteger userSqno;
     private String userId;
     private String title;
     private String content;

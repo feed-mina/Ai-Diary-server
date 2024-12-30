@@ -6,9 +6,9 @@
 <mapper namespace="com.domain.demo_backend.mapper.DiaryMapper">
     <!--단일 일기장 작성하기 -->
     <insert id="insertDiary">
-        INSERT INTO diary(user_sqno, title, content, tag1, tag2,tag3, frst_reg_ip, frst_rgst_usps_sqno)
+        INSERT INTO diary(user_sqno, title, content, tag1, tag2,tag3, frst_reg_ip, frst_rgst_usps_sqno, reg_dt)
         VALUES (#{userSqno}, #{title}, #{content},#{tag1}, #{tag2}, #{tag3}, #{diaryStatus}
-               ,#{frstRegIp}, #{frstRgstUspsSqno})
+               ,#{frstRegIp}, #{frstRgstUspsSqno}, #{regDt})
     </insert>
 
     <!-- updateDiaryDel 일기 삭제 -->

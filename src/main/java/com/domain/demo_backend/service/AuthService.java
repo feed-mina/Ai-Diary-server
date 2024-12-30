@@ -5,7 +5,7 @@ import com.domain.demo_backend.mapper.UserMapper;
 import com.domain.demo_backend.user.domain.User;
 import com.domain.demo_backend.user.dto.LoginRequest;
 import com.domain.demo_backend.user.dto.RegisterRequest;
-import com.domain.demo_backend.util.JwtProvider;
+import com.domain.demo_backend.util.JwtUtil;
 import com.domain.demo_backend.util.PasswordUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,11 +15,11 @@ import java.time.LocalDateTime;
 @Service
 public class AuthService {
     private final UserMapper userMapper;
-    private final JwtProvider jwtProvider;
+    private final JwtUtil jwtUtil;
 
-    public AuthService(UserMapper userMapper, JwtProvider jwtProvider) {
+    public AuthService(UserMapper userMapper, JwtUtil jwtUtil) {
         this.userMapper = userMapper;
-        this.jwtProvider = jwtProvider;
+        this.jwtUtil = jwtUtil;
     }
     public String login(LoginRequest loginRequest) {
 
@@ -40,7 +40,7 @@ public class AuthService {
         }
         System.out.println("JWT 성공");
         // 비밀번호를 포함하지 않은 사용자 정보를 JWT에 포함
-        return jwtProvider.createToken(user.getUserId(), user.getUsername());
+        return jwtUtil.createToken( user.getUsername(), user.getUserSqno());
     }
 
 
@@ -73,7 +73,7 @@ public class AuthService {
                 .hashedPassword(PasswordUtil.sha256(registerRequest.getPassword()))
                 .phone(registerRequest.getPhone())
                 .email(registerRequest.getEmail())
-                .role("USER")
+                .role("ROLE_USER")
                 .createdAt(LocalDateTime.now())
                 .build();
 

@@ -4,6 +4,7 @@ import com.domain.demo_backend.diary.domain.Diary;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
+import java.math.BigInteger;
 import java.util.Collection;
 
 @Getter
@@ -21,9 +22,13 @@ public class DiaryRequest {
     private String searchType;
     // 검색어
     private String searchText;
+
+    private String diaryStatus;
     // 사용자 일련번호
-     private Long userSqno;
-    // 최초 등록 IP
+     private BigInteger userSqno;
+     // 글쓴이
+    private String userId;
+     // 최초 등록 IP
     private String frstRegstIp;
 
      // 최중 수정 IP
@@ -33,6 +38,8 @@ public class DiaryRequest {
     @JsonFormat(pattern = "yyyy-MM-dd")
     private String lastUpdtDt;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private String regDt;
     // 삭제 여부
     private String delYn;
 
@@ -44,5 +51,18 @@ public class DiaryRequest {
     private String tag1;
     private String tag2;
     private String tag3;
+
+    public Diary toDiary() {
+        return Diary.builder()
+                .userSqno(this.userSqno)
+                .userId(this.userId)
+                .title(this.title)
+                .content(this.content)
+                .tag1(this.tag1)
+                .tag2(this.tag2)
+                .tag3(this.tag3)
+                .diaryStatus(this.diaryStatus)
+                .build();
+    }
 
 }
