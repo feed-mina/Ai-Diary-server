@@ -13,7 +13,7 @@ public class UserInfoHelper {
     public static CustomUserDetails getMemberInfo(){
         // spring security의 securityContextHolder에서 인증 정보를 가져온다.
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication == null || !(authentication instanceof CustomUserDetails)) {
+        if (authentication == null || authentication.getPrincipal() == null) {
             throw new IllegalStateException("인증되지 않은 사용자입니다.");
         }
 

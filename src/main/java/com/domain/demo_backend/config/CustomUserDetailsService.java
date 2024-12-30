@@ -32,6 +32,8 @@ public class CustomUserDetailsService implements UserDetailsService {
       User user =  userMapper.findByUsername(username);
         System.out.println("DB에서 조회된 사용자: " + user);
         System.out.println("CustomUserDetails userSqno: " + user.getUserSqno());
+        System.out.println("CustomUserDetails username: " + user.getUserSqno());
+        System.out.println("CustomUserDetails userId: " + user.getUserId());
 
         if (user == null) {
             throw new UsernameNotFoundException("사용자를 찾을 수 없습니다: " + username);
@@ -40,7 +42,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         return new CustomUserDetails(
                 user.getUsername(),
                 user.getUserSqno(),
-                user.getPassword(),
+                user.getUserId(),
                 getAuthorities(user.getRole())
         ); // CustomUserDetails 객체 반환
     }
