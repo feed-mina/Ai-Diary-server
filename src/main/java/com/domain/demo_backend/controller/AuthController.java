@@ -65,7 +65,8 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody RegisterRequest registerRequest) {
         System.out.println("회원가입 진입");
-        System.out.println(registerRequest);
+
+        System.out.println("registerRequest: "+ registerRequest);
         authService.register(registerRequest);
         System.out.println("register service logic OK");
         return ResponseEntity.ok("User registred successfully!");

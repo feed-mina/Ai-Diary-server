@@ -43,13 +43,21 @@ public class AuthService {
         return jwtUtil.createToken( user.getUsername(), user.getUserSqno(), user.getUserId());
     }
 
+    public class DuplicateEmailException extends RuntimeException {
+        public DuplicateEmailException(String message) {
+            super(message);
+        }
+    }
 
     // 새 사용자 정보를 해시처리 후 데이터베이스에 저장
     // 이미 존재하는 사용자 아이디인지 확인하고 중복되면 예외 발생
     @Transactional
     public void register(RegisterRequest registerRequest) {
-        if (userMapper.findByUserId(registerRequest.getUserId()) != null) {
-            System.out.println("회원 가입 아이디 실패");
+        if (userMapper.findByUserEmail(registerRequest.getEmail()) != null) {
+            throw new DuplicateEmailException("이미 존재하는 이메일입니다.");
+        }
+            if (userMapper.findByUserId(registerRequest.getUserId()) != null) {
+            System.out.println("존재하는 아이디 실패");
 
             throw new IllegalArgumentException("이미 존재하는 아이디입니다.");
         }
@@ -61,7 +69,6 @@ public class AuthService {
 
         if(userMapper.findByUserPhone(registerRequest.getPhone()) != null){
             System.out.println("회원가입 핸드폰 실패");
-
             throw new IllegalArgumentException("이미 존재하는 핸드폰 번호입니다.");
         }
 
@@ -76,8 +83,7 @@ public class AuthService {
                 .role("ROLE_USER")
                 .createdAt(LocalDateTime.now())
                 .build();
-
-        System.out.println(user);
+        System.out.println("user: "+ user);
         System.out.println("user Mapper insertUser 시작");
         userMapper.insertUser(user);
     }
