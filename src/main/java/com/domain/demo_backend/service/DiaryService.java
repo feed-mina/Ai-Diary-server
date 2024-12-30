@@ -11,6 +11,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Service;
 
 import java.math.BigInteger;
@@ -45,26 +46,29 @@ public class DiaryService {
     public void addDiary(DiaryRequest diaryRequest, String ip, Authentication authentication) {
 
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
+        System.out.println("userDetails-다이어리서비스: " + userDetails);
         diaryRequest.setUserSqno(userDetails.getUserSqno());
 
         // 로깅을 위해 추가
-        System.out.println("addDiary" +diaryRequest);
-        System.out.println("addDiary" +diaryRequest.toDiary());
-
+        System.out.println("diaryRequest-다이어리서비스: " +diaryRequest);
+        System.out.println("diaryRequest.toDiary()-다이어리서비스: " +diaryRequest.toDiary());
         Diary diary = Diary.builder()
-                .userId(diaryRequest.getUserId())
-                .title(diaryRequest.getTitle())
-                .content(diaryRequest.getContent())
-                .tag1(diaryRequest.getTag1())
-                .tag2(diaryRequest.getTag2())
-                .tag3(diaryRequest.getTag3())
-                .regDt(LocalDateTime.now())
-                .diaryStatus(diaryRequest.getDiaryStatus())
-                .frstRegIp(ip)
+                .userSqno(diaryRequest.getUserSqno() != null ? diaryRequest.getUserSqno() : userDetails.getUserSqno())
+                .title(diaryRequest.getTitle() != null ? diaryRequest.getTitle() : "Untitled")
+                .content(diaryRequest.getContent() != null ? diaryRequest.getContent() : "")
+                .tag1(diaryRequest.getTag1() != null ? diaryRequest.getTag1() : "")
+                .tag2(diaryRequest.getTag2() != null ? diaryRequest.getTag2() : "")
+                .tag3(diaryRequest.getTag3() != null ? diaryRequest.getTag3() : "")
+                .frstRegIp(ip != null ? ip : "127.0.0.1")
+                .frstRgstUspsSqno(userDetails.getUserSqno() != null ? userDetails.getUserSqno() : BigInteger.ZERO)
+                .author(diaryRequest.getAuthor() != null ? diaryRequest.getAuthor() : "")
+                .emotion(diaryRequest.getEmotion() != null ? diaryRequest.getEmotion() : 0)
                 .build();
-        System.out.println("diary: " +diary);
 
-        diaryMapper.insertDiary(diary.toDiary());
+
+        System.out.println("Diary 객체 생성 값: " + diary);
+
+        diaryMapper.insertDiary(diary);
     }
 
     public void updateDiaryDel(Set<Diary> diaryRemoveList, Diary diary){
