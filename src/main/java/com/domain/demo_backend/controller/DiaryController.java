@@ -93,10 +93,15 @@ public class DiaryController {
 
 @GetMapping("/viewDiaryList")
     public String viewDiaryList(DiaryRequest diaryReq, Model model) {
+        System.out.println("diaryReq: " +diaryReq );
+        System.out.println("selectDiaryList 다이어리 서비스 로직 진입");
     PageInfo<DiaryResponse> diaryList = diaryService.selectDiaryList(diaryReq);
+    System.out.println("diaryList: " +diaryList );
     model.addAttribute("diaryList", diaryList);
     model.addAttribute("diaryReq", diaryReq);
     model.addAttribute("diaryListSize", diaryList.getTotal());
+
+    System.out.println("diaryList-model: " +model );
     return "viewDiaryList";
 }
 

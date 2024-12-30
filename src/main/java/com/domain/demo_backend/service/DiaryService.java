@@ -30,10 +30,13 @@ public class DiaryService {
     }
 
     public PageInfo<DiaryResponse> selectDiaryList(DiaryRequest diaryReq) {
+        System.out.println("다이어리 서비스 selectDiaryList진입");
         PageHelper.startPage(diaryReq.getPageNo(), diaryReq.getPageSize());
         List<DiaryResponse> diaryResponseList = null;
         try {
             diaryResponseList = diaryMapper.selectDiaryList(diaryReq);
+
+            System.out.println("diaryResponseList: "+ diaryResponseList);
         } catch (Exception e) {
             System.err.println("Error fetching diary list: " + e.getMessage());
             throw new RuntimeException("일기를 조회하는 도중 오류가 발생했습니다.", e);
