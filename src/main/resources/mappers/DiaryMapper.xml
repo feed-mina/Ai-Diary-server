@@ -5,11 +5,43 @@
 
 <mapper namespace="com.domain.demo_backend.mapper.DiaryMapper">
     <!--단일 일기장 작성하기 -->
-    <insert id="insertDiary">
-        INSERT INTO diary(user_sqno, title, content, tag1, tag2,tag3, frst_reg_ip, frst_rgst_usps_sqno, reg_dt)
-        VALUES (#{userSqno}, #{title}, #{content},#{tag1}, #{tag2}, #{tag3}, #{diaryStatus}
-               ,#{frstRegIp}, #{frstRgstUspsSqno}, #{regDt})
+    <insert id="insertDiary" >
+        INSERT INTO diary (
+        user_sqno,
+        title,
+        content,
+        tag1,
+        tag2,
+        tag3,
+        frst_reg_ip,
+        frst_rgst_usps_sqno,
+        reg_dt,
+        author,
+        emotion
+        ) VALUES (
+        #{userSqno},
+        <if test="title != null">#{title}</if>
+        <if test="title == null">'Untitled'</if>,
+        <if test="content != null">#{content}</if>
+        <if test="content == null">''</if>,
+        <if test="tag1 != null">#{tag1}</if>
+        <if test="tag1 == null">''</if>,
+        <if test="tag2 != null">#{tag2}</if>
+        <if test="tag2 == null">''</if>,
+        <if test="tag3 != null">#{tag3}</if>
+        <if test="tag3 == null">''</if>,
+        <if test="frstRegIp != null">#{frstRegIp}</if>
+        <if test="frstRegIp == null">'127.0.0.1'</if>,
+        <if test="frstRgstUspsSqno != null">#{frstRgstUspsSqno}</if>
+        <if test="frstRgstUspsSqno == null">0</if>,
+        NOW(),
+        <if test="author != null">#{author}</if>
+        <if test="author == null">''</if>,
+        <if test="emotion != null">#{emotion}</if>
+        <if test="emotion == null">0</if>
+        )
     </insert>
+
 
     <!-- updateDiaryDel 일기 삭제 -->
     <update id="updateDiaryDel">

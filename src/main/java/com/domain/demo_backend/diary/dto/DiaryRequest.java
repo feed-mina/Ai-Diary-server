@@ -52,6 +52,8 @@ public class DiaryRequest {
     private String tag2;
     private String tag3;
 
+    private String author;
+    private Integer emotion;
     public Diary toDiary() {
         return Diary.builder()
                 .userSqno(this.userSqno)
@@ -62,6 +64,8 @@ public class DiaryRequest {
                 .tag2(this.tag2)
                 .tag3(this.tag3)
                 .diaryStatus(this.diaryStatus)
+                .author(this.author)
+                .emotion(this.emotion)
                 .build();
     }
 

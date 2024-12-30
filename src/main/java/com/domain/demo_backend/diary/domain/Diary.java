@@ -22,22 +22,26 @@ public class Diary {
     private BigInteger userSqno;
     private String sbsceDt;
     private String lastUpdtDt;
-    private String roleCd;
-    private String roleNm;
     private LocalDateTime regDt;
-    private LocalDateTime updtDt;
     private String diaryStatus;
+    private String frstRegIp;
+    private BigInteger frstRgstUspsSqno;
+    private String author; // 작성자 추가
+    private Integer emotion; // 감정지수 추가
+
+    private LocalDateTime updtDt;
     private String diaryType;
     private String delYn;
     private LocalDateTime delDt;
     private LocalDateTime frstRegDt;
-    private String frstRegIp;
+    private String roleCd;
+    private String roleNm;
     private String lastUpdtIp;
-    private Long frstRgstUspsSqno;
-    private Long lastUpdtUspsSqno;
+    private BigInteger lastUpdtUspsSqno;
 
     public Diary toDiary() {
         return Diary.builder()
+                .userSqno(this.userSqno)
                 .userId(this.userId)
                 .title(this.title)
                 .content(this.content)
@@ -45,11 +49,17 @@ public class Diary {
                 .tag2(this.tag2)
                 .tag3(this.tag3)
                 .diaryStatus(this.diaryStatus)
+                .frstRegIp(this.frstRegIp)
+                .frstRgstUspsSqno(this.frstRgstUspsSqno)
+                .regDt(this.regDt)
+                .author(this.author)
+                .emotion(this.emotion)
                 .build();
     }
 
     @Builder
-    public Diary(String title, String content,String tag1,String tag2,String tag3, String date, String userId, String username, BigInteger userSqno, String sbsceDt, String lastUpdtDt, String roleCd, String roleNm, LocalDateTime regDt, LocalDateTime updtDt, String diaryStatus, String diaryType, String delYn, LocalDateTime delDt, LocalDateTime frstRegDt, String frstRegIp, String lastUpdtIp, Long frstRgstUspsSqno, Long lastUpdtUspsSqno) {
+    public Diary(String title, String content,String tag1,String tag2,String tag3, String date, String userId, String username, BigInteger userSqno, String sbsceDt, String lastUpdtDt, String roleCd, String roleNm, LocalDateTime regDt, LocalDateTime updtDt, String diaryStatus, String diaryType, String delYn, LocalDateTime delDt, LocalDateTime frstRegDt, String frstRegIp, String lastUpdtIp, BigInteger frstRgstUspsSqno, Long lastUpdtUspsSqno, String author, Integer emotion) {
+        this.userSqno = userSqno;
         this.title = title;
         this.content = content;
         this.tag1 = tag1;
@@ -62,6 +72,11 @@ public class Diary {
         this.sbsceDt = sbsceDt;
         this.lastUpdtDt = lastUpdtDt;
         this.diaryStatus = diaryStatus;
+        this.frstRgstUspsSqno = frstRgstUspsSqno;
+        this.frstRegIp = frstRegIp;
+        this.regDt = regDt;
+        this.author = author;
+        this.emotion = emotion;
     }
 
 }
