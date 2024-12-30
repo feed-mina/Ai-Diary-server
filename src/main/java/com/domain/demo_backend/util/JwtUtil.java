@@ -51,14 +51,15 @@ public class JwtUtil {
     }
 
     // 토큰생성
-    public String createToken(String username, BigInteger userSqno) {
+    public String createToken(String username, BigInteger userSqno, String userId) {
         Claims claims = Jwts.claims().setSubject(username);
         Date now = new Date();
         Date validity = new Date(now.getTime() + 1000 * 60 * 60 * 24);
 
         return Jwts.builder()
                 .setClaims(claims)
-                .claim("userSqno", userSqno.toString()) // 사용자 고유 식별자 추가
+                .claim("userSqno", userSqno.toString()) //
+                .claim("userId", userId)// 사용자 고유 식별자 추가
                 .setIssuedAt(now)
                 .setExpiration(validity)
                 .signWith(secretKey, SignatureAlgorithm.HS256)

@@ -7,7 +7,9 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,15 +24,7 @@ import java.util.List;
 
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
-
-//    @Autowired
-//  private JwtUtil JwtUtil;
-
-    @Autowired
-    private CustomUserDetailsService customUserDetailsService;
-
     private final JwtUtil jwtUtil;
-
     public JwtAuthenticationFilter(JwtUtil jwtUtil) {
         this.jwtUtil = jwtUtil;
     }
@@ -44,49 +38,44 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
             String token = authorizationHeader.substring(7);
+
+            System.out.println("token : " + token);
             try {
                 Claims claims = jwtUtil.validateToken(token); // 토큰 검증
                 // 유효하지 않은 토큰 예외 처리
                 System.out.println("claims: " + claims);
-                // String username = claims.get("username", String.class);
                 String username = claims.getSubject();
+                System.out.println("username : " + username);
+                String userId = claims.get("userId", String.class);
                 String userSqnoStr = claims.get("userSqno", String.class); // String으로 읽기
-                BigInteger userSqno = new BigInteger(userSqnoStr); // BigInteger로 변환
-
-                System.out.println("username: " + username);
-
-                System.out.println("userSqno: " + userSqno);
+                System.out.println("userSqnoStr : " + userSqnoStr);
+                BigInteger userSqno = new BigInteger(userSqnoStr);
+                System.out.println("userSqno : " + userSqno);
 
                 if (username != null) {
-//                    UserDetails userDetails = User.withUsername(username)
-//                            .password("") // 비밀번호는 확인하지 않음
-//                            .authorities("ROLE_USER") // 역할 설정
-//                            .build();
-                    // 사용자 권한 설정
-
                     List<GrantedAuthority> authorities = List.of(() -> "ROLE_USER");
-                    // CustomUserDetails 객체 생성
+                    System.out.println("authorities: " + authorities);
+                    CustomUserDetails userDetails = new CustomUserDetails(username, userSqno, userId, List.of(new SimpleGrantedAuthority("ROLE_USER")));
 
-                    CustomUserDetails userDetails = new CustomUserDetails(
-                                username, userSqno, "", List.of(() -> "ROLE_USER"));
+                    System.out.println("userDetails: " + userDetails);
                     // 인증 토큰 생성
+                    Authentication authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+                    System.out.println("authentication: " + authentication);
 
-                    UsernamePasswordAuthenticationToken authToken =
-                            new UsernamePasswordAuthenticationToken(userDetails, null,userDetails.getAuthorities());
-                    authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-                    // SecurityContextHolder에 인증 정보 저장
-
-                    SecurityContextHolder.getContext().setAuthentication(authToken);
+                    SecurityContextHolder.getContext().setAuthentication(authentication);
                 }
             } catch (Exception e) {
                 // 유효하지 않은 토큰 예외 처리
                 System.err.println("Invalid JWT token: " + e.getMessage());
+                e.printStackTrace();
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // 401 응답 반환
                 response.getWriter().write("Invalid JWT Token");
                 return;
             }
         }
         filterChain.doFilter(request, response); // 다음 필터로 이동
+        System.out.println("request: " + request);
+        System.out.println("response: " + response);
     }
 
 

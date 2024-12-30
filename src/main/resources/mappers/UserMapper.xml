@@ -25,7 +25,7 @@
 
     <select id="findByUsername" parameterType="string"  resultType="com.domain.demo_backend.user.domain.User">
             SELECT
-            user_id AS username,
+            username,
             password,
             user_sqno AS userSqno
             FROM users

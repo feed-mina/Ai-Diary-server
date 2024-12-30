@@ -40,7 +40,7 @@ public class AuthService {
         }
         System.out.println("JWT 성공");
         // 비밀번호를 포함하지 않은 사용자 정보를 JWT에 포함
-        return jwtUtil.createToken( user.getUsername(), user.getUserSqno());
+        return jwtUtil.createToken( user.getUsername(), user.getUserSqno(), user.getUserId());
     }
 
 
