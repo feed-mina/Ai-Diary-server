@@ -59,6 +59,7 @@ public class DiaryService {
                 .tag1(diaryRequest.getTag1() != null ? diaryRequest.getTag1() : "")
                 .tag2(diaryRequest.getTag2() != null ? diaryRequest.getTag2() : "")
                 .tag3(diaryRequest.getTag3() != null ? diaryRequest.getTag3() : "")
+                .diaryStatus(diaryRequest.getDiaryStatus() != null? diaryRequest.getDiaryStatus() : false)
                 .frstRegIp(ip != null ? ip : "127.0.0.1")
                 .frstRgstUspsSqno(userDetails.getUserSqno() != null ? userDetails.getUserSqno() : BigInteger.ZERO)
                 .author(diaryRequest.getAuthor() != null ? diaryRequest.getAuthor() : "")

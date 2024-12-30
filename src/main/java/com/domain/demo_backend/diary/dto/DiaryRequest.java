@@ -23,7 +23,7 @@ public class DiaryRequest {
     // 검색어
     private String searchText;
 
-    private String diaryStatus;
+    private Boolean diaryStatus;
     // 사용자 일련번호
      private BigInteger userSqno;
      // 글쓴이

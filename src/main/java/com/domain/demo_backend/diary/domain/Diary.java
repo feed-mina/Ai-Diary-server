@@ -23,7 +23,7 @@ public class Diary {
     private String sbsceDt;
     private String lastUpdtDt;
     private LocalDateTime regDt;
-    private String diaryStatus;
+    private Boolean diaryStatus;
     private String frstRegIp;
     private BigInteger frstRgstUspsSqno;
     private String author; // 작성자 추가
@@ -58,7 +58,7 @@ public class Diary {
     }
 
     @Builder
-    public Diary(String title, String content,String tag1,String tag2,String tag3, String date, String userId, String username, BigInteger userSqno, String sbsceDt, String lastUpdtDt, String roleCd, String roleNm, LocalDateTime regDt, LocalDateTime updtDt, String diaryStatus, String diaryType, String delYn, LocalDateTime delDt, LocalDateTime frstRegDt, String frstRegIp, String lastUpdtIp, BigInteger frstRgstUspsSqno, Long lastUpdtUspsSqno, String author, Integer emotion) {
+    public Diary(String title, String content,String tag1,String tag2,String tag3, String date, String userId, String username, BigInteger userSqno, String sbsceDt, String lastUpdtDt, String roleCd, String roleNm, LocalDateTime regDt, LocalDateTime updtDt, Boolean diaryStatus, String diaryType, String delYn, LocalDateTime delDt, LocalDateTime frstRegDt, String frstRegIp, String lastUpdtIp, BigInteger frstRgstUspsSqno, Long lastUpdtUspsSqno, String author, Integer emotion) {
         this.userSqno = userSqno;
         this.title = title;
         this.content = content;
