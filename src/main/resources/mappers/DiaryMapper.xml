@@ -54,11 +54,12 @@
         </if>
     </update>
 
-<!-- 자신이 쓴 일기 목록만 조회 가능 -->
+<!--  일기 목록  조회 가능 -->
 <select id="selectDiaryList" resultType="com.domain.demo_backend.diary.dto.DiaryResponse">
 SELECT
     diary_id AS diaryID,
     user_sqno AS userSqno,
+    author,
     title,
     content,
     tag1,
@@ -66,15 +67,11 @@ SELECT
     tag3,
     emotion,
     diary_status AS diaryStatus,
-    diary_type AS diaryType,
     del_yn AS delYn,
-    reg_dt AS regDt,
+    reg_dt AS date,
     updt_dt AS updtDt
 FROM diary
 where del_yn = 'N'
-<if test="userSqno != null">
-    AND user_sqno = #{userSqno}
-</if>
     ORDER BY reg_dt DESC
 </select>
 

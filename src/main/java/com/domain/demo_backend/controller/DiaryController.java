@@ -24,6 +24,7 @@ import org.springframework.web.bind.MissingRequestHeaderException;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigInteger;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -92,17 +93,30 @@ public class DiaryController {
       }
 
 @GetMapping("/viewDiaryList")
-    public String viewDiaryList(DiaryRequest diaryReq, Model model) {
+    public ResponseEntity<?> viewDiaryList(DiaryRequest diaryReq, Model model) {
+        System.out.println("selectDiaryList 다이어리 컨트롤러 로직 진입");
         System.out.println("diaryReq: " +diaryReq );
-        System.out.println("selectDiaryList 다이어리 서비스 로직 진입");
-    PageInfo<DiaryResponse> diaryList = diaryService.selectDiaryList(diaryReq);
-    System.out.println("diaryList: " +diaryList );
-    model.addAttribute("diaryList", diaryList);
-    model.addAttribute("diaryReq", diaryReq);
-    model.addAttribute("diaryListSize", diaryList.getTotal());
+        try{
+            System.out.println("selectDiaryList 서비스 로직 진입");
 
-    System.out.println("diaryList-model: " +model );
-    return "viewDiaryList";
+            PageInfo<DiaryResponse> diaryList = diaryService.selectDiaryList(diaryReq);
+            System.out.println("selectDiaryList 서비스 : " +diaryList );
+
+            Map<String,Object> response = new HashMap<>();
+            response.put("diaryList",diaryList);
+            response.put("total", diaryList.getTotal());
+            response.put("page", diaryList.getPageNum());
+            response.put("pageSize", diaryList.getPageSize());
+            model.addAttribute("diaryList", diaryList);
+            System.out.println("model : " +model );
+            System.out.println("response : " +response );
+            return ResponseEntity.ok(response);
+
+
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+
 }
 
 @GetMapping("/findDiarySearchList")
