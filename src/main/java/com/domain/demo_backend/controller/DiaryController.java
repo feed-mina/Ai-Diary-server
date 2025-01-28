@@ -93,40 +93,112 @@ public class DiaryController {
       }
 
 @GetMapping("/viewDiaryList")
-    public ResponseEntity<?> viewDiaryList(DiaryRequest diaryReq, Model model) {
+    public ResponseEntity<?> viewDiaryList(Model model,DiaryRequest diaryReq,
+        @RequestParam(value = "userId", required = false) String  userId,
+        @RequestParam(value = "pageNo", defaultValue = "1") int pageNo,
+        @RequestParam(value = "pageSize", defaultValue = "5") int pageSize) {
+
+        // String currentUserId =String.valueOf(UserInfoHelper.getMemberInfo().getUserSqno());// "user" 접두어와 currentUserId 값을 결합
+        // currentUserId = "user" + currentUserId;
+        String currentUserId = "user" + UserInfoHelper.getMemberInfo().getUserSqno(); // 현재 로그인한 사용자 ID
+
+        System.out.println("현재 로그인한 사용자 ID: " + currentUserId);
+        System.out.println("요청받은 userId: " + userId);
+
+      // userId가 있으면 해당 ID로 필터링, 없으면 전체 조회
+      String filterUserId = (userId != null && userId.equals(currentUserId)) ? userId : null;
+
+         //  userId = (!currentUserId.equals(userId)) ? null : userId;
+
         System.out.println("selectDiaryList 다이어리 컨트롤러 로직 진입");
-        System.out.println("diaryReq: " +diaryReq );
+        System.out.println("1--diaryReq:: " +diaryReq );
+        System.out.println("pageNo: " + pageNo + ", pageSize: " + pageSize);
         try{
-            System.out.println("selectDiaryList 서비스 로직 진입");
+            System.out.println("일기 조회 시작 - userId: " + filterUserId);
 
-            PageInfo<DiaryResponse> diaryList = diaryService.selectDiaryList(diaryReq);
-            System.out.println("selectDiaryList 서비스 : " +diaryList );
+            // 서비스 호출 (userId가 null이면 전체 조회)
+            PageInfo<DiaryResponse> diaryList = diaryService.selectDiaryList(filterUserId, pageNo, pageSize, diaryReq);
 
-            Map<String,Object> response = new HashMap<>();
-            response.put("diaryList",diaryList);
+            // Prepare response
+            Map<String, Object> response = new HashMap<>();
+            response.put("diaryList", diaryList.getList());
             response.put("total", diaryList.getTotal());
             response.put("page", diaryList.getPageNum());
             response.put("pageSize", diaryList.getPageSize());
-            model.addAttribute("diaryList", diaryList);
-            System.out.println("model : " +model );
-            System.out.println("response : " +response );
+
+            // diaryList.getList()에서 userId만 추출
+            List<String> userIds =diaryList.getList().stream()
+                            .map(DiaryResponse::getUserId)
+                            .collect(Collectors.toList()); // DiaryReponse에서 userId를 가져옴
+
+            System.out.println("userIds: " + userIds);
+
+            System.out.println("3-1--diaryList.getList():: " +diaryList.getList() );
+            System.out.println("4--response:: " +response );
             return ResponseEntity.ok(response);
-
-
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+            System.err.println("Error in viewDiaryList: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("일기 조회 중 오류 발생");
         }
 
 }
 
-@GetMapping("/findDiarySearchList")
+    @GetMapping("/getDiaryItem/{diaryId}")
+    public ResponseEntity<?> getDiaryById(@PathVariable String diaryId, @RequestParam BigInteger userId, HttpServletRequest request) {
+        // 현재 사용자의 고유번호를 가져옴
+        BigInteger currentUserId = UserInfoHelper.getMemberInfo().getUserSqno();
+
+        DiaryRequest diaryReq = new DiaryRequest();
+        // diaryId로 데이터를 검색하는 로직
+        // 요청 객체에 사용자 고유 번호를 세팅
+        diaryReq.setDiaryId(diaryId);
+        diaryReq.setUserSqno(userId != null ? userId : currentUserId);
+
+        System.out.println("viewDiaryItem 다이어리 컨트롤러 로직 진입");
+        System.out.println("5--diaryReq:: " +diaryReq );
+        try{
+
+            // Set<DiaryResponse> diaryItem = diaryService.viewDiaryItem(diaryReq);
+            Set<DiaryResponse> diaryItem = diaryService.findDiaryById(diaryId);
+
+            System.out.println("6--selectDiaryList 서비스:: " + diaryItem );
+
+            Map<String,Object> response = new HashMap<>();
+            response.put("diaryItem",diaryItem);
+            System.out.println("7--selectDiaryListresponse:: " +response );
+            return ResponseEntity.ok(response);
+        }catch(Exception e){
+
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+@GetMapping("/viewDiaryItem/{diaryId}")
 @ResponseBody
-    public ApiResponseDto<List<DiaryResponse>>  findDiarySearchList(DiaryRequest diaryReq) {
+    public  ResponseEntity<?>  viewDiaryItem(@PathVariable("diaryId")String diaryId, @RequestParam BigInteger userId, HttpServletRequest request) {
     // 현재 사용자의 고유번호를 가져옴
     BigInteger currentUserId = UserInfoHelper.getMemberInfo().getUserSqno();
+
+    DiaryRequest diaryReq = new DiaryRequest();
+
     // 요청 객체에 사용자 고유 번호를 세팅
-        diaryReq.setUserSqno(currentUserId);
-    return ApiResponseDto.success((List<DiaryResponse>) diaryService.findDiaryList(diaryReq));
+        diaryReq.setDiaryId(diaryId);
+        diaryReq.setUserSqno(userId != null ? userId : currentUserId);
+
+    System.out.println("viewDiaryItem 다이어리 컨트롤러 로직 진입");
+    System.out.println("5--diaryReq:: " +diaryReq );
+    try{
+        System.out.println("viewDiaryItem 서비스 로직 진입");
+
+        Set<DiaryResponse> diaryItem = diaryService.viewDiaryItem(diaryReq);
+        System.out.println("6--selectDiaryList 서비스:: " + diaryItem );
+
+        Map<String,Object> response = new HashMap<>();
+        response.put("diaryItem",diaryItem);
+        System.out.println("7--selectDiaryListresponse:: " +response );
+        return ResponseEntity.ok(response);
+    } catch (Exception e) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+    }
 
 }
 

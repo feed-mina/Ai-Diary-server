@@ -7,15 +7,27 @@ import com.domain.demo_backend.user.dto.LoginRequest;
 import com.domain.demo_backend.user.dto.RegisterRequest;
 import com.domain.demo_backend.util.JwtUtil;
 import com.domain.demo_backend.util.PasswordUtil;
+import jakarta.mail.MessagingException;
+import jakarta.mail.internet.MimeMessage;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import java.io.File;
 
 import java.time.LocalDateTime;
+import java.util.Random;
 
 @Service
 public class AuthService {
     private final UserMapper userMapper;
     private final JwtUtil jwtUtil;
+
+    @Autowired
+    private JavaMailSender mailSender;
+
 
     public AuthService(UserMapper userMapper, JwtUtil jwtUtil) {
         this.userMapper = userMapper;
@@ -87,4 +99,77 @@ public class AuthService {
         System.out.println("user Mapper insertUser 시작");
         userMapper.insertUser(user);
     }
+
+    public void sendEmail(String to, String subject, String body) {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setTo(to);
+        message.setSubject(subject);
+        message.setText(body);
+        mailSender.send(message);
+    }
+
+    public void sendHtmlEmail(String to, String subject, String body, String imagePath) throws MessagingException {
+        MimeMessage mimeMessage = mailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
+
+        helper.setTo(to);
+        helper.setSubject(subject);
+        helper.setText(body, true);
+
+        // Inline 이미지 추가
+        File imageFile = new File(imagePath);
+        helper.addInline("imageId", imageFile);
+
+        mailSender.send(mimeMessage);
+    }
+    public void sendEmailWithAttachment(String to, String subject, String body, String filePath) throws MessagingException {
+        MimeMessage mimeMessage = mailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true); // true는 첨부 파일 허용
+
+        helper.setTo(to);
+        helper.setSubject(subject);
+        helper.setText(body, true); // HTML 형식 허용
+
+        // 첨부 파일 추가
+        File file = new File(filePath);
+        helper.addAttachment(file.getName(), file);
+
+        mailSender.send(mimeMessage);
+    }
+    public void saveVerificationCode(String email, String verificationCode){
+        LocalDateTime expiresAt = LocalDateTime.now().plusMinutes(60);
+        userMapper.insertVerification(email,verificationCode,expiresAt);
+    }
+
+    public boolean verifyCode(String email, String code){
+        String storedCode = userMapper.getVerificationCode(email);
+        LocalDateTime expirationTime = LocalDateTime.now().plusMinutes(60);
+        if(storedCode != null && storedCode.equals(code)&& expirationTime.isAfter(LocalDateTime.now())) {
+            return true;
+        }
+        return false;
+    }
+    public String sendVerificationCode(String email) throws MessagingException {
+        //랜덤 인등코드 생성
+        String verificationCode = generateRendomCode();
+        // 이메일 작성 및 전송
+        MimeMessage message = mailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(message, "utf-8");
+        helper.setTo(email);
+        helper.setSubject("이메일 인증 코드");
+        helper.setText("인증 코드: " + verificationCode, true);
+
+        mailSender.send(message);
+
+        return verificationCode; // 인증 코드 반환
+
+    }
+    private String generateRendomCode() {
+        Random random = new Random();
+        int code = 1000000 + random.nextInt(10000);
+        // 랜덤 6자리 숫자 생성
+        return String.valueOf(code);
+    }
+
+
 }

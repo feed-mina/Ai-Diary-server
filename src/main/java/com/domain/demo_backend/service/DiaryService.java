@@ -9,10 +9,12 @@ import com.domain.demo_backend.util.ApiResponseDto;
 import com.domain.demo_backend.util.CustomUserDetails;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.math.BigInteger;
 import java.time.LocalDateTime;
@@ -29,21 +31,39 @@ public class DiaryService {
         this.diaryMapper = diaryMapper;
     }
 
-    public PageInfo<DiaryResponse> selectDiaryList(DiaryRequest diaryReq) {
+    public PageInfo<DiaryResponse> selectDiaryList(String userId, int pageNo, int pageSize,DiaryRequest diaryReq) {
         System.out.println("다이어리 서비스 selectDiaryList진입");
-        PageHelper.startPage(diaryReq.getPageNo(), diaryReq.getPageSize());
-        List<DiaryResponse> diaryResponseList = null;
-        try {
-            diaryResponseList = diaryMapper.selectDiaryList(diaryReq);
 
-            System.out.println("diaryResponseList: "+ diaryResponseList);
+        PageHelper.startPage(pageNo, pageSize);
+        List<DiaryResponse> diaryResponseList;
+        try {
+
+            // 일기 목록 가져오기
+            diaryResponseList = diaryMapper.selectDiaryList(userId);
+            System.out.println("1--diaryResponseList:: " + diaryResponseList);
+            // PageInfo 객체로 페이징 결과를 반환
+            return new PageInfo<>(diaryResponseList);
+        } catch (Exception e) {
+            System.err.println("Error fetching diary list: " + e.getMessage());
+            throw new RuntimeException("일기를 조회하는 도중 오류가 발생했습니다.", e);
+        }
+
+    }
+
+    public void selectDiaryItem(DiaryRequest diaryReq,String userId, Diary diary) {
+        System.out.println("다이어리 서비스 selectDiaryItem진입");
+        List<DiaryResponse> diaryResponseItem = null;
+        try {
+            diaryResponseItem = diaryMapper.selectDiaryList(userId);
+
+            System.out.println("2--diaryResponseItem:: "+ diaryResponseItem);
         } catch (Exception e) {
             System.err.println("Error fetching diary list: " + e.getMessage());
             throw new RuntimeException("일기를 조회하는 도중 오류가 발생했습니다.", e);
         }
 
         // PageInfo 객체로 페이징 결과를 반환
-        return new PageInfo<>(diaryResponseList);
+        diaryMapper.insertDiary(diary);
     }
 
     public void addDiary(DiaryRequest diaryRequest, String ip, Authentication authentication) {
@@ -79,29 +99,57 @@ public class DiaryService {
         diaryMapper.updateDiaryDel(diaryRemoveList, diary);
         diaryMapper.updateDiarMnpsDel(diaryRemoveList, diary);
     }
+/**
+ *
+ public ApiResponseDto<String> createDiary(){
+ // 기본 응답 초기화
+ ApiResponseDto<String> response = ApiResponseCode.DEFAULT_OK;
+ try{
+ // 데이터베이스에서 객체 리스트를 가져온다.
+ List<DiaryResponse> list = diaryMapper.selectDiaryList(new DiaryRequest());
+ // 리스트를 userSqno(고유번호)로 그룹화한다.
+ Map<BigInteger, List<DiaryResponse>> diaryRequestMap = list.stream()
+ .sorted(Comparator.comparing(DiaryResponse::getUserSqno))
+ .collect(Collectors.groupingBy(DiaryResponse::getUserSqno));
 
-    public ApiResponseDto<String> createDiary(){
-        // 기본 응답 초기화
-        ApiResponseDto<String> response = ApiResponseCode.DEFAULT_OK;
-        try{
-            // 데이터베이스에서 객체 리스트를 가져온다.
-            List<DiaryResponse> list = diaryMapper.selectDiaryList(new DiaryRequest());
-            // 리스트를 userSqno(고유번호)로 그룹화한다.
-            Map<BigInteger, List<DiaryResponse>> diaryRequestMap = list.stream()
-                    .sorted(Comparator.comparing(DiaryResponse::getUserSqno))
-                    .collect(Collectors.groupingBy(DiaryResponse::getUserSqno));
+ // 결과 리스트 처리
+ List<DiaryResponse> diaryResponseList = new ArrayList<>();
+ System.out.println("Diary Request Map : "+diaryRequestMap);
+ } catch (Exception e) {
+ response = ApiResponseDto.error("Internal Server Error");
+ throw new RuntimeException("Diary creatuib failed",e);
+ }
+ return response;
+ }
 
-            // 결과 리스트 처리
-            List<DiaryResponse> diaryResponseList = new ArrayList<>();
-            System.out.println("Diary Request Map : "+diaryRequestMap);
-        } catch (Exception e) {
-            response = ApiResponseDto.error("Internal Server Error");
-            throw new RuntimeException("Diary creatuib failed",e);
-        }
-        return response;
+ * */
+
+
+public Set<DiaryResponse> findDiaryById(String diaryId){
+
+    DiaryRequest diaryReq = new DiaryRequest();
+    return diaryMapper.findDiaryItemById(diaryReq.getDiaryId())
+            .stream() // set을 stream으로 변환
+            .map(this::convertToDto) // DTO 변환 적용
+            .collect(Collectors.toSet());  // 다시 Set으로 변환
+
+}
+
+    private DiaryResponse convertToDto(DiaryResponse diaryResponse) {
+        DiaryResponse dto = new DiaryResponse();
+        dto.setDiaryId(diaryResponse.getDiaryId());
+        dto.setTitle(diaryResponse.getTitle());
+        dto.setContent(diaryResponse.getContent());
+        dto.setRegDt(diaryResponse.getRegDt());
+        return dto;
     }
 
-    public Object findDiaryList(DiaryRequest diaryReq) {
-        return diaryMapper.selectDiaryList(diaryReq);
+    public Set<DiaryResponse> viewDiaryItem(DiaryRequest diaryReq) {
+
+        return diaryMapper.selectDiaryItem(diaryReq)
+                .stream() // set을 stream으로 변환
+                .map(this::convertToDto) // DTO 변환 적용
+                .collect(Collectors.toSet());  // 다시 Set으로 변환
+
     }
 }

@@ -32,4 +32,25 @@
             WHERE username = #{username}
     </select>
 
+    <insert id="insertVerification">
+        INSERT INTO email_verification(email, verification_code)
+        VALUES (#{email}, #{verificationCode})
+    </insert>
+
+    <select id="getVerificationCode" resultType="String">
+        SELECT verification_code
+        FROM email_verification
+        WHERE email = #{email}
+    </select>
+
+    <select id="getExpriationTime" resultType="java.time.LocalDateTime">
+        SELECT expires_at
+        FROM  email_verification
+        WHERE email = #{email}
+    </select>
+
+    <delete id="deleteVerification">
+        DELETE FROM  email_verification
+        WHERE email = #{email}
+    </delete>
 </mapper>

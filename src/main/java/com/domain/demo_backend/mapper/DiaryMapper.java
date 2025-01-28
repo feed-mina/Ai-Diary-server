@@ -4,6 +4,7 @@ import com.domain.demo_backend.diary.domain.Diary;
 import com.domain.demo_backend.diary.dto.DiaryRequest;
 import com.domain.demo_backend.diary.dto.DiaryResponse;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Set;
@@ -14,7 +15,11 @@ public interface DiaryMapper {
 
     void updateDiaryDel(Set<Diary> diaryRemoveList, Diary diary);
 
+    List<DiaryResponse> selectDiaryList(@Param("userId") String userId);
+
     void updateDiarMnpsDel(Set<Diary> diaryRemoveList, Diary diary);
 
-    List<DiaryResponse> selectDiaryList(DiaryRequest diaryReq);
+    Set<DiaryResponse> findDiaryItemById(String diaryReq);
+
+    Set<DiaryResponse> selectDiaryItem(DiaryRequest diaryReq);
 }

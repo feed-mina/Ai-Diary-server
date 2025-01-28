@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @Getter
 public class Diary {
 
+    private String diaryId;
     private String title;
     private String content;
     private String tag1;
@@ -58,8 +59,8 @@ public class Diary {
     }
 
     @Builder
-    public Diary(String title, String content,String tag1,String tag2,String tag3, String date, String userId, String username, BigInteger userSqno, String sbsceDt, String lastUpdtDt, String roleCd, String roleNm, LocalDateTime regDt, LocalDateTime updtDt, Boolean diaryStatus, String diaryType, String delYn, LocalDateTime delDt, LocalDateTime frstRegDt, String frstRegIp, String lastUpdtIp, BigInteger frstRgstUspsSqno, Long lastUpdtUspsSqno, String author, Integer emotion) {
-        this.userSqno = userSqno;
+    public Diary(String diaryId, String title, String content,String tag1,String tag2,String tag3, String date, String userId, String username, BigInteger userSqno, String sbsceDt, String lastUpdtDt, String roleCd, String roleNm, LocalDateTime regDt, LocalDateTime updtDt, Boolean diaryStatus, String diaryType, String delYn, LocalDateTime delDt, LocalDateTime frstRegDt, String frstRegIp, String lastUpdtIp, BigInteger frstRgstUspsSqno, Long lastUpdtUspsSqno, String author, Integer emotion) {
+        this.diaryId = diaryId;
         this.title = title;
         this.content = content;
         this.tag1 = tag1;

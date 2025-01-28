@@ -6,16 +6,14 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import java.math.BigInteger;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @ToString
 @EqualsAndHashCode
 public  class DiaryResponse {
-    private BigInteger diaryId;
+    private String diaryId;
     private BigInteger userSqno;
     private String userId;
     private String author;
@@ -28,10 +26,8 @@ public  class DiaryResponse {
     private Boolean diaryStatus;
     private Integer emotion;
     private String delYn;
-
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime date;
-
 
     // 최종 수정 일시
     @JsonFormat(pattern = "yyyy-MM-dd")
@@ -40,6 +36,19 @@ public  class DiaryResponse {
     // 최종 수정 일시
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime lastUpdtDt;
+
+
+    // 기존 기본 생성자가 있을 수도 있음
+    public DiaryResponse() {}
+
+    // 필요한 생성자 추가
+    public DiaryResponse(String diaryId, String title, String content, LocalDateTime regDt) {
+        this.diaryId = diaryId;
+        this.title = title;
+        this.content = content;
+        this.regDt = regDt;
+    }
+
 
     public Diary toDiary() {
         return Diary.builder()
@@ -56,4 +65,6 @@ public  class DiaryResponse {
                 .regDt(this.regDt)
                 .build();
     }
+
+
 }

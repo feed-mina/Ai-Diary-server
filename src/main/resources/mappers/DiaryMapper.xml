@@ -9,6 +9,7 @@
         INSERT INTO diary
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="userSqno != null">user_sqno,</if>
+            <if test="userId != null">user_id,</if>
             <if test="title != null">title,</if>
             <if test="content != null">content,</if>
             <if test="tag1 != null">tag1,</if>
@@ -23,6 +24,7 @@
         </trim>
         <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
             <if test="userSqno != null">#{userSqno},</if>
+            <if test="userId != null">#{userId},</if>
             <if test="title != null">#{title},</if>
             <if test="content != null">#{content},</if>
             <if test="tag1 != null">#{tag1},</if>
@@ -56,26 +58,27 @@
 
 <!--  일기 목록  조회 가능 -->
 <select id="selectDiaryList" resultType="com.domain.demo_backend.diary.dto.DiaryResponse">
-SELECT
-    diary_id AS diaryID,
-    user_sqno AS userSqno,
-    author,
-    title,
-    content,
-    tag1,
-    tag2,
-    tag3,
-    emotion,
-    diary_status AS diaryStatus,
-    del_yn AS delYn,
-    reg_dt AS date,
-    updt_dt AS updtDt
-FROM diary
-where del_yn = 'N'
+    SELECT
+        diary_id AS diaryID,
+        user_id AS userId,
+        user_sqno AS userSqno,
+        author,
+        title,
+        content,
+        tag1,
+        tag2,
+        tag3,
+        emotion,
+        diary_status AS diaryStatus,
+        del_yn AS delYn,
+        reg_dt AS date
+    FROM diary
+    where del_yn = 'N'
+      AND (#{userId} IS NULL OR user_id = #{userId})
     ORDER BY reg_dt DESC
 </select>
 
-<!-- findDiarySearchList : 일기 상세 보기-->
+<!-- 일기 List 보기-->
     <select id="findDiaryList" parameterType="string" resultType="com.domain.demo_backend.diary.dto.DiaryResponse">
         SELECT
             diary_id AS diaryID,
@@ -92,6 +95,24 @@ where del_yn = 'N'
             AND title LIKE CONCAT('%', #{title}, '%')
         </if>
         ORDER BY reg_dt DESC
+    </select>
+
+    <!-- selectDiaryItem : 일기 상세 보기-->
+    <select id="selectDiaryItem" parameterType="string" resultType="com.domain.demo_backend.diary.dto.DiaryResponse">
+        SELECT
+        diary_id AS diaryID,
+        user_id AS userID9,
+        user_sqno AS userSqno,
+        title,
+        content,
+        diary_status AS diaryStatus, <!-- hidden 숨기기 true/fasle bool 여부-->
+        diary_type AS diaryType,
+        reg_dt AS regDt,
+        updt_dt AS updtDt
+        FROM diary
+        WHERE diary_id = #{diaryId}
+        AND (user_sqno = #{userSqno} OR #{userSqno} IS NULL)
+        AND  del_yn = 'N'
     </select>
 
 </mapper>
