@@ -32,3 +32,17 @@ build/
 ### VS Code ###
 .vscode/
 
+/logs/application.log
+/src/main/resources/application.properties
+/logs/application-2024-12-30.log
+/logs/application-2024-12-31.log
+/logs/application-2025-01-01.log
+/logs/application-2025-01-02.log
+/logs/application-2025-01-04.log
+/logs/application-2025-01-05.log
+/logs/application-2025-01-06.log
+/logs/application-2025-01-07.log
+/logs/application-2025-01-10.log
+/logs/application-2025-01-11.log
+/logs/application-2025-01-12.log
+/logs/application-2025-01-18.log
