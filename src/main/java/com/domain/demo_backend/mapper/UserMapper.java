@@ -17,4 +17,6 @@ public interface UserMapper {
     void insertVerification(String email, String verification, LocalDateTime expiresAt);
     void deleteVerification(String email);
     String getVerificationCode(String email);
+
+    void nonMember(User user);
 }

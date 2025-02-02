@@ -53,4 +53,11 @@
         DELETE FROM  email_verification
         WHERE email = #{email}
     </delete>
+
+    <update id="nonMember" parameterType="com.domain.demo_backend.user.domain.User">
+        UPDATE users
+        SET delYn = 'Y', updated_at = NOW()
+        WHERE user_id = #{userId}
+    </update>
+
 </mapper>

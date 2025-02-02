@@ -83,8 +83,13 @@ public class AuthController {
             @ApiResponse(responseCode = "500", description = "서버오류"),
     })
     @PostMapping("/non-user")
-    public ResponseEntity<String> nonUser() {
+    public ResponseEntity<String> nonUser(@RequestBody RegisterRequest registerRequest) {
         // 회원탈퇴 로직
+        System.out.println("회원탈퇴 진입");
+
+        System.out.println("registerRequest: "+ registerRequest);
+        authService.nonMember(registerRequest);
+
         return ResponseEntity.ok("회원탈퇴 성공");
     }
 

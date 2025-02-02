@@ -26,6 +26,7 @@ public class User {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private String nickname;
+    private String delYn; // 추가된 탈퇴 여부 컬럼
 
 
     @Builder
