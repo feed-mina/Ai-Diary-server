@@ -23,7 +23,7 @@ public  class DiaryResponse {
     private String tag2;
     private String tag3;
     private String username;
-    private Boolean diaryStatus;
+    private String diaryStatus;
     private Integer emotion;
     private String delYn;
     @JsonFormat(pattern = "yyyy-MM-dd")

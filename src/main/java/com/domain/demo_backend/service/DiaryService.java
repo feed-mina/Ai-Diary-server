@@ -4,20 +4,14 @@ import com.domain.demo_backend.diary.domain.Diary;
 import com.domain.demo_backend.diary.dto.DiaryRequest;
 import com.domain.demo_backend.diary.dto.DiaryResponse;
 import com.domain.demo_backend.mapper.DiaryMapper;
-import com.domain.demo_backend.util.ApiResponseCode;
-import com.domain.demo_backend.util.ApiResponseDto;
 import com.domain.demo_backend.util.CustomUserDetails;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.math.BigInteger;
-import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -78,15 +72,16 @@ public class DiaryService {
         Diary diary = Diary.builder()
                 .userSqno(diaryRequest.getUserSqno() != null ? diaryRequest.getUserSqno() : userDetails.getUserSqno())
                 .title(diaryRequest.getTitle() != null ? diaryRequest.getTitle() : "Untitled")
+                .author(diaryRequest.getAuthor() != null? diaryRequest.getAuthor() : "Undefined")
+                .userId(diaryRequest.getUserId() != null ? diaryRequest.getUserId() : "Undefined")
                 .content(diaryRequest.getContent() != null ? diaryRequest.getContent() : "")
                 .tag1(diaryRequest.getTag1() != null ? diaryRequest.getTag1() : "")
                 .tag2(diaryRequest.getTag2() != null ? diaryRequest.getTag2() : "")
                 .tag3(diaryRequest.getTag3() != null ? diaryRequest.getTag3() : "")
-                .diaryStatus(diaryRequest.getDiaryStatus() != null? diaryRequest.getDiaryStatus() : false)
+                .emotion(diaryRequest.getEmotion() != null ? diaryRequest.getEmotion() : 0)
+                .diaryStatus(diaryRequest.getDiaryStatus() != null? diaryRequest.getDiaryStatus() : "false")
                 .frstRegIp(ip != null ? ip : "127.0.0.1")
                 .frstRgstUspsSqno(userDetails.getUserSqno() != null ? userDetails.getUserSqno() : BigInteger.ZERO)
-                .author(diaryRequest.getAuthor() != null ? diaryRequest.getAuthor() : "")
-                .emotion(diaryRequest.getEmotion() != null ? diaryRequest.getEmotion() : 0)
                 .build();
 
 
@@ -125,7 +120,7 @@ public class DiaryService {
  * */
 
 
-public Set<DiaryResponse> findDiaryById(String diaryId){
+public Set<DiaryResponse> findDiaryById(String diaryId, BigInteger userId){
 
     DiaryRequest diaryReq = new DiaryRequest();
     return diaryMapper.findDiaryItemById(diaryReq.getDiaryId())

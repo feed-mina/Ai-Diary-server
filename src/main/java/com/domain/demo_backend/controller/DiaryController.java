@@ -144,7 +144,10 @@ public class DiaryController {
 }
 
     @GetMapping("/getDiaryItem/{diaryId}")
-    public ResponseEntity<?> getDiaryById(@PathVariable String diaryId, @RequestParam BigInteger userId, HttpServletRequest request) {
+    public ResponseEntity<?> getDiaryById(@PathVariable String diaryId, @RequestParam(value = "userId", required = false) BigInteger userId, HttpServletRequest request) {
+        if (userId == null) {
+            return ResponseEntity.badRequest().body(null); // userId 없으면 오류 응답
+        }
         // 현재 사용자의 고유번호를 가져옴
         BigInteger currentUserId = UserInfoHelper.getMemberInfo().getUserSqno();
 
@@ -159,7 +162,7 @@ public class DiaryController {
         try{
 
             // Set<DiaryResponse> diaryItem = diaryService.viewDiaryItem(diaryReq);
-            Set<DiaryResponse> diaryItem = diaryService.findDiaryById(diaryId);
+            Set<DiaryResponse> diaryItem = diaryService.findDiaryById(diaryId, userId);
 
             System.out.println("6--selectDiaryList 서비스:: " + diaryItem );
 
@@ -174,7 +177,10 @@ public class DiaryController {
     }
 @GetMapping("/viewDiaryItem/{diaryId}")
 @ResponseBody
-    public  ResponseEntity<?>  viewDiaryItem(@PathVariable("diaryId")String diaryId, @RequestParam BigInteger userId, HttpServletRequest request) {
+    public  ResponseEntity<?>  viewDiaryItem(@PathVariable("diaryId")String diaryId, @RequestParam(value = "userId", required = false) BigInteger userId, HttpServletRequest request) {
+    if (userId == null) {
+        return ResponseEntity.badRequest().body(null); // userId 없으면 오류 응답
+    }
     // 현재 사용자의 고유번호를 가져옴
     BigInteger currentUserId = UserInfoHelper.getMemberInfo().getUserSqno();
 
