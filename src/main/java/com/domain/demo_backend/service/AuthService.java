@@ -105,26 +105,19 @@ public class AuthService {
     // 이미 존재하는 사용자 아이디인지 확인하고 중복되면 예외 발생
     @Transactional
     public void nonMember(RegisterRequest registerRequest) {
-
-        System.out.println("유효성 통과");
-
+        System.out.println("회원탈퇴 서비스 진입: " + registerRequest.getUserId());
         User existingUser = userMapper.findByUserId(registerRequest.getUserId());
-
-
         if (existingUser == null) {
+            System.out.println("회원탈퇴 실패: 해당 사용자가 존재하지 않습니다.");
             throw new IllegalArgumentException("해당 사용자가 존재하지 않습니다.");
         }
         // 회원탈퇴 처리
-
         existingUser.setDelYn("Y");
         existingUser.setUpdatedAt(LocalDateTime.now());
-
-
         System.out.println("existingUser : "+ existingUser);
         System.out.println("user Mapper nonMember 시작");
         userMapper.nonMember(existingUser);
         System.out.println("user 탈퇴 처리 완료: " + existingUser);
-
     }
 
 

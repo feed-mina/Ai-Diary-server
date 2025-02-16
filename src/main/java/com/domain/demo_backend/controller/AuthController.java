@@ -11,6 +11,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -84,13 +85,24 @@ public class AuthController {
     })
     @PostMapping("/non-user")
     public ResponseEntity<String> nonUser(@RequestBody RegisterRequest registerRequest) {
-        // 회원탈퇴 로직
+        System.out.println("회원탈퇴 요청 진입: " + registerRequest);
         System.out.println("회원탈퇴 진입");
+        if (registerRequest.getUserId() == null || registerRequest.getUserId().isEmpty()) {
+            System.out.println("회원탈퇴 실패: userId가 비어 있음");
+            return ResponseEntity.badRequest().body("회원 아이디가 필요합니다.");
+        }
 
-        System.out.println("registerRequest: "+ registerRequest);
-        authService.nonMember(registerRequest);
+        try {
+            authService.nonMember(registerRequest);
+            return ResponseEntity.ok("회원탈퇴 성공");
+        } catch (IllegalArgumentException e) {
+            System.out.println("회원탈퇴 실패: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        } catch (Exception e) {
+            System.out.println("회원탈퇴 실패: 서버 내부 오류");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("서버 오류 발생");
+        }
 
-        return ResponseEntity.ok("회원탈퇴 성공");
     }
 
     @Operation(summary = "Kakao OAuth2 로그인" , description = "Kakao 계정으로 로그인 한다.")
