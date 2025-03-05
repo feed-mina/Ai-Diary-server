@@ -1,0 +1,425 @@
+2025-02-18 17:24:27 [restartedMain] INFO  c.d.d.DemoBackendApplication - Starting DemoBackendApplication using Java 17.0.12 with PID 21472 (C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend started by Lee in C:\Users\leeyu\OneDrive\바탕 화면\포트폴리오\demo_spring_Vue\Ai-Diary-server)
+2025-02-18 17:24:27 [restartedMain] INFO  c.d.d.DemoBackendApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-18 17:24:28 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-18 17:24:28 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-18 17:24:31 [restartedMain] DEBUG o.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2025-02-18 17:24:31 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\com\domain\demo_backend\mapper\DiaryMapper.class]
+2025-02-18 17:24:31 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\com\domain\demo_backend\mapper\UserMapper.class]
+2025-02-18 17:24:31 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'diaryMapper' and 'com.domain.demo_backend.mapper.DiaryMapper' mapperInterface
+2025-02-18 17:24:31 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'diaryMapper'.
+2025-02-18 17:24:31 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'com.domain.demo_backend.mapper.UserMapper' mapperInterface
+2025-02-18 17:24:31 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+2025-02-18 17:24:33 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-02-18 17:24:33 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-18 17:24:33 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-18 17:24:33 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+2025-02-18 17:24:34 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-18 17:24:34 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6074 ms
+2025-02-18 17:24:35 [restartedMain] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\mappers\DiaryMapper.xml]'
+2025-02-18 17:24:35 [restartedMain] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\mappers\UserMapper.xml]'
+2025-02-18 17:24:37 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@704bb623, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5f0abfa7, org.springframework.security.web.context.SecurityContextHolderFilter@1013fbc9, org.springframework.security.web.header.HeaderWriterFilter@73f91477, org.springframework.web.filter.CorsFilter@12a88c1b, org.springframework.security.web.authentication.logout.LogoutFilter@2702361b, com.domain.demo_backend.util.JwtAuthenticationFilter@39c71d5a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@734bd26d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a12dce2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4348e815, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@14904eef, org.springframework.security.web.access.ExceptionTranslationFilter@2491787a, org.springframework.security.web.access.intercept.AuthorizationFilter@7dfab764]
+2025-02-18 17:24:39 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-02-18 17:24:39 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-18 17:24:40 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-02-18 17:24:40 [restartedMain] INFO  c.d.d.DemoBackendApplication - Started DemoBackendApplication in 14.357 seconds (process running for 22.271)
+2025-02-18 19:25:55 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-18 19:25:55 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-02-18 19:25:55 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 122 ms
+2025-02-18 19:26:14 [http-nio-8080-exec-3] DEBUG o.s.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2025-02-18 19:26:14 [http-nio-8080-exec-1] DEBUG o.s.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2025-02-18 19:26:14 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-02-18 19:26:17 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7506107f
+2025-02-18 19:26:17 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-02-18 19:26:21 [http-nio-8080-exec-5] DEBUG o.s.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2025-02-18 19:26:22 [http-nio-8080-exec-7] DEBUG o.s.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2025-02-18 19:31:15 [http-nio-8080-exec-10] DEBUG o.s.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2025-02-18 19:32:20 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m32s922ms201µs200ns).
+2025-02-18 19:40:52 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m32s691ms494µs).
+2025-02-18 19:41:01 [http-nio-8080-exec-3] DEBUG o.s.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2025-02-18 19:41:20 [http-nio-8080-exec-6] DEBUG o.s.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2025-02-18 19:41:20 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-02-18 19:41:20 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-02-18 19:41:20 [Thread-5] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-02-18 19:41:20 [Thread-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-18 19:41:20 [Thread-5] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.12/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.12/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.12/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.12/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.12/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.12/java.lang.Thread.run(Thread.java:842)
+2025-02-18 19:41:20 [Thread-5] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-1 connection closer] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.12/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.12/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.12/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.12/java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:460)
+ java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1061)
+ java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.12/java.lang.Thread.run(Thread.java:842)
+2025-02-18 19:41:20 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-02-18 19:41:20 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+2025-02-18 19:41:21 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-02-18 19:41:21 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-02-18 19:41:21 [restartedMain] INFO  c.d.d.DemoBackendApplication - Starting DemoBackendApplication using Java 17.0.12 with PID 21472 (C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend started by Lee in C:\Users\leeyu\OneDrive\바탕 화면\포트폴리오\demo_spring_Vue\Ai-Diary-server)
+2025-02-18 19:41:21 [restartedMain] INFO  c.d.d.DemoBackendApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-18 19:41:24 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\com\domain\demo_backend\mapper\DiaryMapper.class]
+2025-02-18 19:41:24 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\com\domain\demo_backend\mapper\UserMapper.class]
+2025-02-18 19:41:24 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'diaryMapper' and 'com.domain.demo_backend.mapper.DiaryMapper' mapperInterface
+2025-02-18 19:41:24 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'diaryMapper'.
+2025-02-18 19:41:24 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'com.domain.demo_backend.mapper.UserMapper' mapperInterface
+2025-02-18 19:41:24 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+2025-02-18 19:41:24 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-02-18 19:41:24 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-18 19:41:24 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-18 19:41:24 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+2025-02-18 19:41:24 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-18 19:41:24 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3066 ms
+2025-02-18 19:41:24 [restartedMain] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\mappers\DiaryMapper.xml]'
+2025-02-18 19:41:24 [restartedMain] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\mappers\UserMapper.xml]'
+2025-02-18 19:41:25 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@225fd235, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@93c48ee, org.springframework.security.web.context.SecurityContextHolderFilter@78628b20, org.springframework.security.web.header.HeaderWriterFilter@35deebe5, org.springframework.web.filter.CorsFilter@5fed0997, org.springframework.security.web.authentication.logout.LogoutFilter@363c8d65, com.domain.demo_backend.util.JwtAuthenticationFilter@3b6d9e1f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@60e0908d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@52bb35a8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@133513c9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@67ff3d3d, org.springframework.security.web.access.ExceptionTranslationFilter@4f11dbc5, org.springframework.security.web.access.intercept.AuthorizationFilter@efb0f99]
+2025-02-18 19:41:26 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-02-18 19:41:26 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-18 19:41:26 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-02-18 19:41:26 [restartedMain] INFO  c.d.d.DemoBackendApplication - Started DemoBackendApplication in 4.775 seconds (process running for 8228.342)
+2025-02-18 19:41:26 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-02-18 19:59:22 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-18 19:59:23 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-02-18 19:59:23 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 224 ms
+2025-02-18 19:59:32 [http-nio-8080-exec-2] DEBUG o.s.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2025-02-18 19:59:32 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2025-02-18 19:59:34 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@310c9850
+2025-02-18 19:59:34 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2025-02-18 19:59:49 [http-nio-8080-exec-4] DEBUG o.s.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2025-02-18 19:59:52 [http-nio-8080-exec-5] DEBUG o.s.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2025-02-18 21:33:15 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2025-02-18 21:33:16 [Thread-7] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-02-18 21:33:16 [Thread-7] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-02-18 21:33:16 [Thread-7] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2025-02-18 21:33:16 [Thread-7] WARN  o.a.c.loader.WebappClassLoaderBase - The web application [ROOT] appears to have started a thread named [HikariPool-2 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.12/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.12/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.12/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.12/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.12/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.12/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.12/java.lang.Thread.run(Thread.java:842)
+2025-02-18 21:33:16 [Thread-7] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-02-18 21:33:16 [Thread-7] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+2025-02-18 21:33:16 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2025-02-18 21:33:17 [Thread-7] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2025-02-18 21:33:19 [restartedMain] INFO  c.d.d.DemoBackendApplication - Starting DemoBackendApplication using Java 17.0.12 with PID 21472 (C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend started by Lee in C:\Users\leeyu\OneDrive\바탕 화면\포트폴리오\demo_spring_Vue\Ai-Diary-server)
+2025-02-18 21:33:19 [restartedMain] INFO  c.d.d.DemoBackendApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-18 21:33:22 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\com\domain\demo_backend\mapper\DiaryMapper.class]
+2025-02-18 21:33:22 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\com\domain\demo_backend\mapper\UserMapper.class]
+2025-02-18 21:33:22 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'diaryMapper' and 'com.domain.demo_backend.mapper.DiaryMapper' mapperInterface
+2025-02-18 21:33:22 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'diaryMapper'.
+2025-02-18 21:33:22 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'com.domain.demo_backend.mapper.UserMapper' mapperInterface
+2025-02-18 21:33:22 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+2025-02-18 21:33:23 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-02-18 21:33:23 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-18 21:33:23 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-18 21:33:23 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+2025-02-18 21:33:23 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-18 21:33:23 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4196 ms
+2025-02-18 21:33:23 [restartedMain] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\mappers\DiaryMapper.xml]'
+2025-02-18 21:33:23 [restartedMain] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\mappers\UserMapper.xml]'
+2025-02-18 21:33:24 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@301d6afc, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d7d49fb, org.springframework.security.web.context.SecurityContextHolderFilter@544b7a66, org.springframework.security.web.header.HeaderWriterFilter@6dd2ea8b, org.springframework.web.filter.CorsFilter@ff1ef1d, org.springframework.security.web.authentication.logout.LogoutFilter@4774616e, com.domain.demo_backend.util.JwtAuthenticationFilter@397e8d2b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5ced5a82, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1c7742b3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@14db3c6b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@626f4a72, org.springframework.security.web.access.ExceptionTranslationFilter@692c210f, org.springframework.security.web.access.intercept.AuthorizationFilter@5f43a1a8]
+2025-02-18 21:33:25 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-02-18 21:33:25 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-18 21:33:25 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-02-18 21:33:25 [restartedMain] INFO  c.d.d.DemoBackendApplication - Started DemoBackendApplication in 7.213 seconds (process running for 14947.717)
+2025-02-18 21:33:25 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-02-18 21:37:58 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2025-02-18 21:37:58 [Thread-11] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-02-18 21:37:58 [Thread-11] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-02-18 21:37:59 [Thread-11] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-02-18 21:37:59 [Thread-11] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+2025-02-18 21:38:00 [restartedMain] INFO  c.d.d.DemoBackendApplication - Starting DemoBackendApplication using Java 17.0.12 with PID 21472 (C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend started by Lee in C:\Users\leeyu\OneDrive\바탕 화면\포트폴리오\demo_spring_Vue\Ai-Diary-server)
+2025-02-18 21:38:00 [restartedMain] INFO  c.d.d.DemoBackendApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-18 21:38:04 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\com\domain\demo_backend\mapper\DiaryMapper.class]
+2025-02-18 21:38:04 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\com\domain\demo_backend\mapper\UserMapper.class]
+2025-02-18 21:38:04 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'diaryMapper' and 'com.domain.demo_backend.mapper.DiaryMapper' mapperInterface
+2025-02-18 21:38:04 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'diaryMapper'.
+2025-02-18 21:38:04 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'com.domain.demo_backend.mapper.UserMapper' mapperInterface
+2025-02-18 21:38:04 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+2025-02-18 21:38:04 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-02-18 21:38:04 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-18 21:38:04 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-18 21:38:04 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+2025-02-18 21:38:05 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-18 21:38:05 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4271 ms
+2025-02-18 21:38:05 [restartedMain] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\mappers\DiaryMapper.xml]'
+2025-02-18 21:38:05 [restartedMain] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\mappers\UserMapper.xml]'
+2025-02-18 21:38:06 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@329df000, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@108406e7, org.springframework.security.web.context.SecurityContextHolderFilter@6f8b40cf, org.springframework.security.web.header.HeaderWriterFilter@567f99f3, org.springframework.web.filter.CorsFilter@3280aef9, org.springframework.security.web.authentication.logout.LogoutFilter@3ed57455, com.domain.demo_backend.util.JwtAuthenticationFilter@6a14c3f0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@427357fe, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@56a3d380, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@69009794, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@37d42342, org.springframework.security.web.access.ExceptionTranslationFilter@7d885282, org.springframework.security.web.access.intercept.AuthorizationFilter@36c29c82]
+2025-02-18 21:38:07 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-02-18 21:38:07 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-18 21:38:07 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-02-18 21:38:07 [restartedMain] INFO  c.d.d.DemoBackendApplication - Started DemoBackendApplication in 6.934 seconds (process running for 15229.465)
+2025-02-18 21:38:07 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-02-18 21:55:16 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2025-02-18 21:55:17 [Thread-15] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-02-18 21:55:17 [Thread-15] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-02-18 21:55:18 [Thread-15] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-02-18 21:55:18 [Thread-15] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+2025-02-18 21:55:20 [restartedMain] INFO  c.d.d.DemoBackendApplication - Starting DemoBackendApplication using Java 17.0.12 with PID 21472 (C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend started by Lee in C:\Users\leeyu\OneDrive\바탕 화면\포트폴리오\demo_spring_Vue\Ai-Diary-server)
+2025-02-18 21:55:20 [restartedMain] INFO  c.d.d.DemoBackendApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-18 21:55:23 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\com\domain\demo_backend\mapper\DiaryMapper.class]
+2025-02-18 21:55:23 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\com\domain\demo_backend\mapper\UserMapper.class]
+2025-02-18 21:55:23 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'diaryMapper' and 'com.domain.demo_backend.mapper.DiaryMapper' mapperInterface
+2025-02-18 21:55:23 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'diaryMapper'.
+2025-02-18 21:55:23 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'com.domain.demo_backend.mapper.UserMapper' mapperInterface
+2025-02-18 21:55:23 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+2025-02-18 21:55:23 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-02-18 21:55:23 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-18 21:55:23 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-18 21:55:23 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+2025-02-18 21:55:23 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-18 21:55:23 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3309 ms
+2025-02-18 21:55:24 [restartedMain] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\mappers\DiaryMapper.xml]'
+2025-02-18 21:55:24 [restartedMain] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\mappers\UserMapper.xml]'
+2025-02-18 21:55:25 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5e045c43, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a2c565b, org.springframework.security.web.context.SecurityContextHolderFilter@7c97045a, org.springframework.security.web.header.HeaderWriterFilter@52b3beaf, org.springframework.web.filter.CorsFilter@1079d696, org.springframework.security.web.authentication.logout.LogoutFilter@449d07be, com.domain.demo_backend.util.JwtAuthenticationFilter@a6f5bed, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@753abe7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7ba47153, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@17933b9f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7675e8a7, org.springframework.security.web.access.ExceptionTranslationFilter@3d2a3e36, org.springframework.security.web.access.intercept.AuthorizationFilter@293a72aa]
+2025-02-18 21:55:26 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-02-18 21:55:26 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-18 21:55:27 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-02-18 21:55:27 [restartedMain] INFO  c.d.d.DemoBackendApplication - Started DemoBackendApplication in 7.203 seconds (process running for 16269.142)
+2025-02-18 21:55:27 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-02-18 23:20:30 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2025-02-18 23:20:31 [Thread-19] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-02-18 23:20:31 [Thread-19] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-02-18 23:20:31 [Thread-19] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-02-18 23:20:31 [Thread-19] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+2025-02-18 23:20:32 [restartedMain] INFO  c.d.d.DemoBackendApplication - Starting DemoBackendApplication using Java 17.0.12 with PID 21472 (C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend started by Lee in C:\Users\leeyu\OneDrive\바탕 화면\포트폴리오\demo_spring_Vue\Ai-Diary-server)
+2025-02-18 23:20:32 [restartedMain] INFO  c.d.d.DemoBackendApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-18 23:20:37 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\com\domain\demo_backend\mapper\DiaryMapper.class]
+2025-02-18 23:20:37 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\com\domain\demo_backend\mapper\UserMapper.class]
+2025-02-18 23:20:37 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'diaryMapper' and 'com.domain.demo_backend.mapper.DiaryMapper' mapperInterface
+2025-02-18 23:20:37 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'diaryMapper'.
+2025-02-18 23:20:37 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'com.domain.demo_backend.mapper.UserMapper' mapperInterface
+2025-02-18 23:20:38 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+2025-02-18 23:20:38 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-02-18 23:20:38 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-18 23:20:38 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-18 23:20:38 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+2025-02-18 23:20:38 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-18 23:20:38 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5625 ms
+2025-02-18 23:20:38 [restartedMain] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\mappers\DiaryMapper.xml]'
+2025-02-18 23:20:38 [restartedMain] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\mappers\UserMapper.xml]'
+2025-02-18 23:20:39 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1085e555, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@119fa2df, org.springframework.security.web.context.SecurityContextHolderFilter@2de26922, org.springframework.security.web.header.HeaderWriterFilter@73b6f8b4, org.springframework.web.filter.CorsFilter@4a009259, org.springframework.security.web.authentication.logout.LogoutFilter@43fcb0aa, com.domain.demo_backend.util.JwtAuthenticationFilter@5fd95515, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@52d8f28e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2b1e8c0b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@66ffe8cf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@60c9acf6, org.springframework.security.web.access.ExceptionTranslationFilter@51438dfa, org.springframework.security.web.access.intercept.AuthorizationFilter@6cb6ee43]
+2025-02-18 23:20:40 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-02-18 23:20:40 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-18 23:20:40 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-02-18 23:20:40 [restartedMain] INFO  c.d.d.DemoBackendApplication - Started DemoBackendApplication in 7.83 seconds (process running for 21382.322)
+2025-02-18 23:20:40 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-02-18 23:38:03 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2025-02-18 23:38:04 [Thread-23] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-02-18 23:38:04 [Thread-23] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-02-18 23:38:04 [Thread-23] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-02-18 23:38:04 [Thread-23] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+2025-02-18 23:38:06 [restartedMain] INFO  c.d.d.DemoBackendApplication - Starting DemoBackendApplication using Java 17.0.12 with PID 21472 (C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend started by Lee in C:\Users\leeyu\OneDrive\바탕 화면\포트폴리오\demo_spring_Vue\Ai-Diary-server)
+2025-02-18 23:38:06 [restartedMain] INFO  c.d.d.DemoBackendApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-18 23:38:08 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\com\domain\demo_backend\mapper\DiaryMapper.class]
+2025-02-18 23:38:08 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\com\domain\demo_backend\mapper\UserMapper.class]
+2025-02-18 23:38:08 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'diaryMapper' and 'com.domain.demo_backend.mapper.DiaryMapper' mapperInterface
+2025-02-18 23:38:08 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'diaryMapper'.
+2025-02-18 23:38:08 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'com.domain.demo_backend.mapper.UserMapper' mapperInterface
+2025-02-18 23:38:08 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+2025-02-18 23:38:09 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-02-18 23:38:09 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-18 23:38:09 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-18 23:38:09 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+2025-02-18 23:38:09 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-18 23:38:09 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3097 ms
+2025-02-18 23:38:09 [restartedMain] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\mappers\DiaryMapper.xml]'
+2025-02-18 23:38:09 [restartedMain] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\mappers\UserMapper.xml]'
+2025-02-18 23:38:10 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@56262f36, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@68de8340, org.springframework.security.web.context.SecurityContextHolderFilter@6209d1ab, org.springframework.security.web.header.HeaderWriterFilter@30c16074, org.springframework.web.filter.CorsFilter@6c52c73b, org.springframework.security.web.authentication.logout.LogoutFilter@1a1130f3, com.domain.demo_backend.util.JwtAuthenticationFilter@14cfeaa4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@22cb45d0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@451ca219, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2dec492e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@73f72894, org.springframework.security.web.access.ExceptionTranslationFilter@7083137f, org.springframework.security.web.access.intercept.AuthorizationFilter@2ac5c9a1]
+2025-02-18 23:38:11 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-02-18 23:38:11 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-18 23:38:11 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-02-18 23:38:11 [restartedMain] INFO  c.d.d.DemoBackendApplication - Started DemoBackendApplication in 6.03 seconds (process running for 22433.546)
+2025-02-18 23:38:11 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-02-18 23:38:54 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 2 class path changes (0 additions, 2 deletions, 0 modifications)
+2025-02-18 23:38:54 [Thread-27] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-02-18 23:38:54 [Thread-27] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-02-18 23:38:54 [Thread-27] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-02-18 23:38:54 [Thread-27] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+2025-02-18 23:38:54 [restartedMain] INFO  c.d.d.DemoBackendApplication - Starting DemoBackendApplication using Java 17.0.12 with PID 21472 (C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend started by Lee in C:\Users\leeyu\OneDrive\바탕 화면\포트폴리오\demo_spring_Vue\Ai-Diary-server)
+2025-02-18 23:38:54 [restartedMain] INFO  c.d.d.DemoBackendApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-18 23:38:55 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\com\domain\demo_backend\mapper\DiaryMapper.class]
+2025-02-18 23:38:55 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\com\domain\demo_backend\mapper\UserMapper.class]
+2025-02-18 23:38:55 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'diaryMapper' and 'com.domain.demo_backend.mapper.DiaryMapper' mapperInterface
+2025-02-18 23:38:55 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'diaryMapper'.
+2025-02-18 23:38:55 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'com.domain.demo_backend.mapper.UserMapper' mapperInterface
+2025-02-18 23:38:55 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+2025-02-18 23:38:56 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Unable to load cache item
+	at org.springframework.cglib.core.internal.LoadingCache.createEntry(LoadingCache.java:75)
+	at org.springframework.cglib.core.internal.LoadingCache.get(LoadingCache.java:34)
+	at org.springframework.cglib.core.AbstractClassGenerator$ClassLoaderData.get(AbstractClassGenerator.java:130)
+	at org.springframework.cglib.core.AbstractClassGenerator.create(AbstractClassGenerator.java:317)
+	at org.springframework.cglib.proxy.Enhancer.createHelper(Enhancer.java:562)
+	at org.springframework.cglib.proxy.Enhancer.createClass(Enhancer.java:407)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer.createClass(ConfigurationClassEnhancer.java:138)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer.enhance(ConfigurationClassEnhancer.java:109)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.enhanceConfigurationClasses(ConfigurationClassPostProcessor.java:531)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanFactory(ConfigurationClassPostProcessor.java:308)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:358)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:150)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:771)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:589)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298)
+	at com.domain.demo_backend.DemoBackendApplication.main(DemoBackendApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.NoClassDefFoundError: com/domain/demo_backend/util/JwtUtil
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3373)
+	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2555)
+	at org.springframework.cglib.proxy.Enhancer.generateClass(Enhancer.java:655)
+	at org.springframework.cglib.transform.TransformingClassGenerator.generateClass(TransformingClassGenerator.java:35)
+	at org.springframework.cglib.core.DefaultGeneratorStrategy.generate(DefaultGeneratorStrategy.java:26)
+	at org.springframework.cglib.core.ClassLoaderAwareGeneratorStrategy.generate(ClassLoaderAwareGeneratorStrategy.java:57)
+	at org.springframework.cglib.core.AbstractClassGenerator.generate(AbstractClassGenerator.java:366)
+	at org.springframework.cglib.proxy.Enhancer.generate(Enhancer.java:575)
+	at org.springframework.cglib.core.AbstractClassGenerator$ClassLoaderData.lambda$new$1(AbstractClassGenerator.java:107)
+	at org.springframework.cglib.core.internal.LoadingCache.lambda$createEntry$1(LoadingCache.java:52)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at org.springframework.cglib.core.internal.LoadingCache.createEntry(LoadingCache.java:57)
+	... 25 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.domain.demo_backend.util.JwtUtil
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:467)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 39 common frames omitted
+2025-02-18 23:39:09 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-18 23:39:09 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-18 23:39:09 [restartedMain] INFO  c.d.d.DemoBackendApplication - Starting DemoBackendApplication using Java 17.0.12 with PID 21472 (C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend started by Lee in C:\Users\leeyu\OneDrive\바탕 화면\포트폴리오\demo_spring_Vue\Ai-Diary-server)
+2025-02-18 23:39:09 [restartedMain] INFO  c.d.d.DemoBackendApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-18 23:39:17 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\com\domain\demo_backend\mapper\DiaryMapper.class]
+2025-02-18 23:39:17 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\com\domain\demo_backend\mapper\UserMapper.class]
+2025-02-18 23:39:17 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'diaryMapper' and 'com.domain.demo_backend.mapper.DiaryMapper' mapperInterface
+2025-02-18 23:39:17 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'diaryMapper'.
+2025-02-18 23:39:17 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'com.domain.demo_backend.mapper.UserMapper' mapperInterface
+2025-02-18 23:39:17 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+2025-02-18 23:39:17 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-02-18 23:39:17 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-18 23:39:17 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-18 23:39:17 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+2025-02-18 23:39:17 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-18 23:39:17 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 8096 ms
+2025-02-18 23:39:17 [restartedMain] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\mappers\DiaryMapper.xml]'
+2025-02-18 23:39:17 [restartedMain] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\mappers\UserMapper.xml]'
+2025-02-18 23:39:18 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@205ad4e7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@274a7f52, org.springframework.security.web.context.SecurityContextHolderFilter@14047ecd, org.springframework.security.web.header.HeaderWriterFilter@2464aa60, org.springframework.web.filter.CorsFilter@62f6de28, org.springframework.security.web.authentication.logout.LogoutFilter@499c6520, com.domain.demo_backend.util.JwtAuthenticationFilter@403e6d49, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@ac515fa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4bf7b95c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7fef0c07, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@36b57445, org.springframework.security.web.access.ExceptionTranslationFilter@5ded2825, org.springframework.security.web.access.intercept.AuthorizationFilter@385fb4df]
+2025-02-18 23:39:19 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-02-18 23:39:19 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-18 23:39:19 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-02-18 23:39:19 [restartedMain] INFO  c.d.d.DemoBackendApplication - Started DemoBackendApplication in 10.418 seconds (process running for 22501.581)
+2025-02-18 23:39:19 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-02-18 23:42:36 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2025-02-18 23:42:37 [Thread-31] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-02-18 23:42:37 [Thread-31] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-02-18 23:42:37 [Thread-31] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-02-18 23:42:37 [Thread-31] INFO  o.a.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+2025-02-18 23:42:38 [restartedMain] INFO  c.d.d.DemoBackendApplication - Starting DemoBackendApplication using Java 17.0.12 with PID 21472 (C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend started by Lee in C:\Users\leeyu\OneDrive\바탕 화면\포트폴리오\demo_spring_Vue\Ai-Diary-server)
+2025-02-18 23:42:38 [restartedMain] INFO  c.d.d.DemoBackendApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-18 23:42:41 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\com\domain\demo_backend\mapper\DiaryMapper.class]
+2025-02-18 23:42:41 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\com\domain\demo_backend\mapper\UserMapper.class]
+2025-02-18 23:42:41 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'diaryMapper' and 'com.domain.demo_backend.mapper.DiaryMapper' mapperInterface
+2025-02-18 23:42:41 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'diaryMapper'.
+2025-02-18 23:42:41 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'com.domain.demo_backend.mapper.UserMapper' mapperInterface
+2025-02-18 23:42:41 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+2025-02-18 23:42:42 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: Unable to load cache item
+	at org.springframework.cglib.core.internal.LoadingCache.createEntry(LoadingCache.java:75)
+	at org.springframework.cglib.core.internal.LoadingCache.get(LoadingCache.java:34)
+	at org.springframework.cglib.core.AbstractClassGenerator$ClassLoaderData.get(AbstractClassGenerator.java:130)
+	at org.springframework.cglib.core.AbstractClassGenerator.create(AbstractClassGenerator.java:317)
+	at org.springframework.cglib.proxy.Enhancer.createHelper(Enhancer.java:562)
+	at org.springframework.cglib.proxy.Enhancer.createClass(Enhancer.java:407)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer.createClass(ConfigurationClassEnhancer.java:138)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer.enhance(ConfigurationClassEnhancer.java:109)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.enhanceConfigurationClasses(ConfigurationClassPostProcessor.java:531)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanFactory(ConfigurationClassPostProcessor.java:308)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:358)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:150)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:771)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:589)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298)
+	at com.domain.demo_backend.DemoBackendApplication.main(DemoBackendApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.NoClassDefFoundError: com/domain/demo_backend/util/JwtUtil
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3373)
+	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2555)
+	at org.springframework.cglib.proxy.Enhancer.generateClass(Enhancer.java:655)
+	at org.springframework.cglib.transform.TransformingClassGenerator.generateClass(TransformingClassGenerator.java:35)
+	at org.springframework.cglib.core.DefaultGeneratorStrategy.generate(DefaultGeneratorStrategy.java:26)
+	at org.springframework.cglib.core.ClassLoaderAwareGeneratorStrategy.generate(ClassLoaderAwareGeneratorStrategy.java:57)
+	at org.springframework.cglib.core.AbstractClassGenerator.generate(AbstractClassGenerator.java:366)
+	at org.springframework.cglib.proxy.Enhancer.generate(Enhancer.java:575)
+	at org.springframework.cglib.core.AbstractClassGenerator$ClassLoaderData.lambda$new$1(AbstractClassGenerator.java:107)
+	at org.springframework.cglib.core.internal.LoadingCache.lambda$createEntry$1(LoadingCache.java:52)
+	at java.base/java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:264)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java)
+	at org.springframework.cglib.core.internal.LoadingCache.createEntry(LoadingCache.java:57)
+	... 25 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.domain.demo_backend.util.JwtUtil
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:467)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 39 common frames omitted
+2025-02-18 23:53:54 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-18 23:53:54 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-18 23:53:55 [restartedMain] INFO  c.d.d.DemoBackendApplication - Starting DemoBackendApplication using Java 17.0.12 with PID 21472 (C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend started by Lee in C:\Users\leeyu\OneDrive\바탕 화면\포트폴리오\demo_spring_Vue\Ai-Diary-server)
+2025-02-18 23:53:55 [restartedMain] INFO  c.d.d.DemoBackendApplication - No active profile set, falling back to 1 default profile: "default"
+2025-02-18 23:54:02 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\com\domain\demo_backend\mapper\DiaryMapper.class]
+2025-02-18 23:54:02 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Identified candidate component class: file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\com\domain\demo_backend\mapper\UserMapper.class]
+2025-02-18 23:54:02 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'diaryMapper' and 'com.domain.demo_backend.mapper.DiaryMapper' mapperInterface
+2025-02-18 23:54:02 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'diaryMapper'.
+2025-02-18 23:54:02 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'com.domain.demo_backend.mapper.UserMapper' mapperInterface
+2025-02-18 23:54:02 [restartedMain] DEBUG o.m.s.mapper.ClassPathMapperScanner - Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+2025-02-18 23:54:04 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2025-02-18 23:54:04 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-02-18 23:54:04 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-02-18 23:54:04 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.13]
+2025-02-18 23:54:04 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-02-18 23:54:04 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 9620 ms
+2025-02-18 23:54:05 [restartedMain] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\mappers\DiaryMapper.xml]'
+2025-02-18 23:54:05 [restartedMain] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [C:\Users\leeyu\OneDrive\바탕 화면\production\demo_backend\mappers\UserMapper.xml]'
+2025-02-18 23:54:09 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@36270100, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@50fe5684, org.springframework.security.web.context.SecurityContextHolderFilter@b6a54da, org.springframework.security.web.header.HeaderWriterFilter@f5f1a14, org.springframework.web.filter.CorsFilter@28cd4fda, org.springframework.security.web.authentication.logout.LogoutFilter@7b89b751, com.domain.demo_backend.util.JwtAuthenticationFilter@2a3408dd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@12720127, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@261e8778, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@793a34e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2495339a, org.springframework.security.web.access.ExceptionTranslationFilter@5f0fd469, org.springframework.security.web.access.intercept.AuthorizationFilter@24cb9019]
+2025-02-18 23:54:10 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-02-18 23:54:10 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-02-18 23:54:10 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2025-02-18 23:54:10 [restartedMain] INFO  c.d.d.DemoBackendApplication - Started DemoBackendApplication in 17.332 seconds (process running for 23392.747)
+2025-02-18 23:54:10 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged

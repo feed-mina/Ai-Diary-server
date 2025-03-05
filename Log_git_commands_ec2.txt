@@ -1,0 +1,243 @@
+    1  git clone https://github.com/feed-mina/AI-DIARY.git
+    2  cd [200~C:\Users\leeyu\OneDrive\바탕 화면\포트폴리오~
+    3  cd C:\Users\leeyu\OneDrive\바탕 화면\포트폴리오
+    4  cd C:\Users\leeyu\OneDrive
+    5  cd C:\Users\leeyu\OneDrive\바탕 화면\포트폴리오
+    6  cd 
+    7  cd C:\Users\leeyu\OneDrive\바탕 화면\포트폴리오
+    8  cd Users\leeyu\OneDrive\바탕 화면\포트폴리오
+    9  git init
+   10  cd [200~
+   11  cd C:\Users\leeyu\OneDrive\바탕 화면\포트폴리오
+   12  cd "C:\Users\leeyu\OneDrive\바탕 화면\포트폴리오"
+   13  git clone https://github.com/feed-mina/AI-DIARY.git
+   14  npm install -g @vue/cli
+   15  cd [200~문서~
+   16  cd "문서"
+   17  cd demo_2024
+   18  mkdir demo_backend
+   19  cd ..
+   20  mv demo_frontend ./demo_2024
+   21  git init
+   22  ll
+   23  git add .
+   24  git commit -m "Initial commit for frontend and backend"
+   25  git config --global user.name "myelin24@naver.com"
+   26  git config --global user.name "mina"
+   27  git commit -m "Initial commit for frontend and backend"
+   28  hor identity unknown
+   29  *** Please tell me who you are.
+   30  Run
+   31    git config --global user.email "you@example.com"
+   32    git config --global user.name "Your Name"
+   33  to set your account's default identity.
+   34  Omit --global to set the identity only in this repository.
+   35  fatal: unable to auto-detect email address (got 'Lee@YL_Min.(none)')
+   36  git config --global --list
+   37  git config user.name "mina"
+   38  git config --global --list
+   39  git config --global user.name "mina"
+   40  git config --global --list
+   41  git config --global user.email "myelin24@naver.com"
+   42  git config --global --list
+   43  git commit
+   44  git add .
+   45  git commit -m "Initial commit for frontend and backend"
+   46  git remote add origin https://github.com/feed-mina/demo_spring-Vue.git
+   47  git push -u origin master
+   48  git commit
+   49  Lee@YL_Min MINGW64 ~/OneDrive/문서/demo_2024 (master)
+   50  $ git push -u origin master
+   51  error: src refspec master does not match any
+   52  error: failed to push some refs to 'https://github.com/feed-mina/demo_spring-Vue
+   53  .git'
+   54  Lee@YL_Min MINGW64 ~/OneDrive/문서/demo_2024 (master)
+   55  $ git commit
+   56  On branch master
+   57  Initial commit
+   58  Untracked files:
+   59    (use "git add <file>..." to include in what will be committed)
+   60          .idea/
+   61          demo_backend/
+   62          demo_frontend/
+   63  nothing added to commit but untracked files present (use "git add" to track)
+   64  git add .
+   65  [200~git commit -m "Initial commit for demo_frontend and demo_backend"
+   66  git commit -m "Initial commit for demo_frontend and demo_backend"
+   67  git config --global core.autocrlf true
+   68  git add demo_frontend/
+   69  git add demo_backend/
+   70  git commit -m "Initial commit for demo_frontend and demo_backend"
+   71  git branch
+   72  git push -u origin master
+   73  git add demo_frontend/
+   74  cd demo_frontend/
+   75  git init
+   76  cd ..
+   77  git branch
+   78  git branch -M main
+   79  git add .
+   80  git commit -m "Initial commit for demo_frontend and demo_backend"
+   81  git add demo_frontend/
+   82  git commit -m "Initial commit for demo_frontend and demo_backend"
+   83  git add demo_frontend
+   84  git add /demo_frontend
+   85  git commit -m
+   86  git commit
+   87  git push -u origin main
+   88  cd demo_frontend/
+   89  rm -rf .git
+   90  cd ..
+   91  git add .
+   92  git commit -m "Add demo_frontend and demo_backend"
+   93  git pull origin main -- allow-unrelated-histories
+   94  git pull origin main --allow-unrelated-histories
+   95  git push -u origin main 
+   96  git clone "https://github.com/feed-mina/demo_spring-Vue.git"
+   97  ls
+   98  cd demo_spring-Vue/
+   99  ls
+  100  git remote -v
+  101  git remote -v
+  102  git add .
+  103  git status
+  104  ls
+  105  git init
+  106  git rmeote -v
+  107  git remote -v
+  108  git remote add server "https://github.com/feed-mina/Ai-Diary-server.git"
+  109  git push server main
+  110  git add .
+  111  git status
+  112  git push server main
+  113  git branch
+  114  git remote -v
+  115  git checkout -b main
+  116  git rebase --continue
+  117   status
+  118  git remote show server
+  119  git status
+  120  git commit -m "update 2024-12-20"
+  121  git push server main
+  122  git pull origin main --rebase
+  123  git pull server main --rebase
+  124  git push server main
+  125  git remote -v
+  126  ls
+  127  cd Ai-Diary-server-main/
+  128  git remote -v
+  129  git checkout -b temp
+  130  git add .
+  131  git commit -m "Upload Ai-Diary-server-main to temp branch"
+  132  git push server temp
+  133  git branch -r
+  134  git init
+  135  git remote -v
+  136  git remote add origin "https://github.com/feed-mina/demo_spring-Vue.git"
+  137  git push origin main
+  138  git status
+  139  git add .
+  140  git commit -m "실행환경 충돌해결[2024-12-20]"
+  141  git push origin main
+  142  git push origin main --force
+  143  git remote -v
+  144  git status
+  145  git add .
+  146  git commit -m "spring 프로젝트 폴더 변경 [2024-12-20]"
+  147  git push origin main --force
+  148  git remote -v
+  149  git status
+  150  cd Ai-Diary-vue/
+  151  git remote -v
+  152  cd ..
+  153  git add Ai-Diary-vue/
+  154  git commit -m "로그인쿠키값에 따른 nav 버튼 유무 및 메인, 튜토리얼 페이지 레이아웃 [2024-12-23]"
+  155  git push origin main
+  156  git add Ai-Diary-server/
+  157  git commit -m "환경설정 및 Auth 로직 일부 수정 [2024-12-23]"
+  158  git push origin main
+  159  cd Ai-Diary-vue/
+  160  rm -rf node_modules/ package-lock.json
+  161  npm install
+  162  npm install vite@latest vuetify@latest vitest@latest @vitejs/plugin-vue@latest
+  163  npm run dev
+  164  npm run build
+  165  rm -rf node_modules/
+  166  rm -rf package-lock.json 
+  167  rm -rf dist/
+  168  aws sts get-caller-identity
+  169  aws configure get region
+  170  aws ec2 describe-images --region ap-northeast-2 --owners amazon --query 'Images[*].[ImageId,Name]' --output table
+  171  aws ec2 describe-images --region ap-northeast-2 --owners amazon --filters "Name=name,Values=ubuntu/images/hvm-ssd/ubuntu-*" --query 'Images[*].[ImageId,Name]' --output table
+  172  aws ec2 run-instances     --image-id ami-0084f4f520f7fd92a \  # 위에서 찾은 AMI ID 입력
+  173      --count 1     --instance-type t2.micro     --key-name my-key \  # 키 페어 이름
+  174      --security-groups my-security-group  # 보안 그룹 이름
+  175   aws ec2 run-instances     --image-id ami-0084f4f520f7fd92a \   
+  176      --count 1     --instance-type t2.micro     --key-name my-key \   
+  177      --security-groups my-security-group  
+  178   aws ec2 run-instances     --image-id ami-0084f4f520f7fd92a \   
+  179      --count 1     --instance-type t2.micro     --key-name web_2025_version1 \   
+  180      --security-groups sg-0365fffd9d76683f8
+  181  ssh -i "web_2025_version1.pem" ubuntu@3.39.9.230
+  182  ls -l
+  183  pwd
+  184  ls -l web_2025_version1.pem
+  185  aws ec2 run-instances --image-id ami-0084f4f520f7fd92a --count 1 --instance-type t2.micro --key-name web_2025_version1 --security-groups sg-0365fff9d7d6683f8
+  186  ls -l web_2025_version1.ppk
+  187  aws ec2 describe-images --owners amazon --region ap-northeast-2 --filters "Name=name,Values=ubuntu/images/hvm-ssd/ubuntu-*" --query 'Images[*].[ImageId,Name]' --output table
+  188  aws ec2 describe-security-groups --query 'SecurityGroups[*].[GroupName,GroupId]' --output table
+  189  aws ec2 run-instances --image-id ami-005ae5a5e49e4aee --count 1 --instance-type t2.micro --key-name web_2025_version1 --security-groups sg-00d8fd0ab5e173485
+  190  aws ec2 run-instances --image-id ami-0084f4f520f7fd92a --count 1 --instance-type t2.micro --key-name web_2025_version1 --security-groups sg-00d8fd0ab5e173485
+  191  clear
+  192  clear
+  193  aws ec2 run-instances --image-id ami-0084f4f520f7fd92a --count 1 --instance-type t2.micro --key-name web_2025_version1 --security-group-ids sg-0365fffd9d76683f8 --region ap-northeast-2
+  194  aws ec2 run-instances --image-id ami-005ae5a5e49e4aee --count 1 --instance-type t2.micro --key-name web_2025_version1 --security-group-ids sg-00d8fd0ab5e173485 --region ap-northeast-2
+  195  aws ec2 describe-images --owners amazon --region ap-northeast-2
+  196  aws ec2 describe-images --owners amazon --filters "Name=name,Values=ubuntu/images/hvm-ssd/ubuntu-*-amd64-server-*" --query 'Images[*].[ImageId,Name]' --region ap-northeast-2
+  197  aws ec2 describe-images --owners amazon --filters "Name=name,Values=ubuntu/images/hvm-ssd/ubuntu-22.04-amd64-server-*" --query 'Images | sort_by(@, &CreationDate) | [-1].ImageId' --region ap-northeast-2
+  198  aws ec2 run-instances --image-id ami-003aa746ac2e6a66d --count 1 --instance-type t2.micro --key-name web_2025_version1 --security-group-ids sg-0365fffd9d76683f8 --region ap-northeast-2
+  199  aws ec2 describe-instances --query 'Reservations[*].Instances[*].[InstanceId, State.Name, PublicIpAddress]' --region ap-northeast-2
+  200  ssh -i "web_2025_version1.pem" ubuntu@3.34.90.124
+  201  pwd
+  202  ssh -i "/c/Users/leeyu/web_2025_version1.pem" ubuntu@3.34.90.124
+  203  ls l
+  204  ls
+  205  ssh -i "web_2025_version1.pem" ubuntu@3.34.90.124
+  206  chmod 400 /c/Users/leeyu/web_2025_version1.pem
+  207  ssh -i "/c/Users/leeyu/web_2025_version1.pem" ubuntu@3.34.90.124
+  208  ls
+  209  ./mvnw package
+  210  ls -a
+  211  mvn wrapper:wrapper
+  212  mvn -v
+  213  cd /portfolio/demo_spring_Vue/Ai-Diary-server
+  214  ls
+  215  psd
+  216  pwd
+  217  clean
+  218  clear
+  219  clear
+  220  cd portfolio
+  221  cd demo_spring_Vue/Ai-Diary-server/
+  222  mvn wrapper:wrapper
+  223  ./mvnw package
+  224  ./mvnw clean
+  225  ./mvnw package
+  226  ls l
+  227  ls
+  228  ls -all
+  229  cd target/
+  230  ls -all
+  231  scp -i "C:\Users\leeyu\web_2025_version1.pem" C:\Users\leeyu\portfolio\demo_spring_Vue\Ai-Diary-server\target\demo_backend-0.0.1-SNAPSHOT.jar ubuntu@3.34.90.124:/home/ubuntu/
+  232  cd ..
+  233  mvn package
+  234  ls -all
+  235  cd target/
+  236  ls -all
+  237  scp -i "/c/Users/leeyu/web_2025_version1.pem" "/c/Users/leeyu/portfolio/demo_spring_Vue/Ai-Diary-server/target/demo_backend-0.0.1-SNAPSHOT.jar" ubuntu@3.34.90.124:/home/ubuntu/
+  238  ssh -i "C:\Users\leeyu\web_2025_version1.pem" ubuntu@3.34.90.124
+  239  clear
+  240   ssh -i "C:\Users\leeyu\web_2025_version1.pem" ubuntu@3.34.90.124
+  241  sudo netstat -tulnp | grep java
+  242   ssh -i "C:\Users\leeyu\web_2025_version1.pem" ubuntu@3.34.90.124
+  243  history > git_commands_ec2.txt
